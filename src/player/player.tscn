@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://csa2ar7yv5xdg"]
+
+[ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="1_cllj6"]
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_i671x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lrlx"]
+size = Vector2(130, 126)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_40oy1"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_i671x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2lrlx")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+texture = ExtResource("1_cllj6")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_40oy1")
+
+[node name="Camera2D" type="Camera2D" parent="."]

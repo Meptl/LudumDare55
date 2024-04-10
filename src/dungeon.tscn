@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmkwgjyw0028k"]
+
+[ext_resource type="Script" path="res://src/dungeon.gd" id="1_wjk1s"]
+
+[node name="Dungeon" type="Node2D"]
+script = ExtResource("1_wjk1s")
+
+[node name="Host" type="Button" parent="."]
+offset_left = 344.0
+offset_top = 281.0
+offset_right = 388.0
+offset_bottom = 312.0
+text = "Host
+"
+
+[node name="Join" type="Button" parent="."]
+offset_left = 425.0
+offset_top = 284.0
+offset_right = 469.0
+offset_bottom = 315.0
+text = "Join
+"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://src/player/player.tscn")
+spawn_path = NodePath("..")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 342.0
+offset_top = 342.0
+offset_right = 409.062
+offset_bottom = 373.0
+expand_to_text_length = true
+
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
