@@ -14,6 +14,10 @@ config/name="Ludum Dare 55"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
+
 [input]
 
 move_left={
