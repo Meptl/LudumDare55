@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 @export var MOTION_SPEED = 160  # Pixels/second.
-const IP_ADDRESS = "127.0.0.1"
-const PORT = 15069
 
 @onready var cam = $Camera2D
 
@@ -26,10 +24,11 @@ func _physics_process(_delta):
 	set_velocity(motion)
 	move_and_slide()
 
-	update_remote_position.rpc(position)
+	# For some reason all other peers automatically sync except the host.
+	if NakamaConnection.multiplayer.get_unique_id() == 1:
+		update_remote_position.rpc(position)
 
 	if Input.is_action_just_pressed("quit"):
-		$"../".exit_game(name.to_int())
 		get_tree().quit()
 
 

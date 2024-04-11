@@ -5,11 +5,17 @@ const IP_ADDRESS = "64.176.216.144"
 const PORT = 7350
 const SERVER_KEY = "defaultkey"
 
+var client
+var session
 var multiplayer_bridge
 
 
 func init_nakama():
-	var client = Nakama.create_client(
+	if client:
+		# TODO: Check if session is still valid and refresh it.
+		return
+
+	client = Nakama.create_client(
 		SERVER_KEY, IP_ADDRESS, PORT, SCHEME, Nakama.DEFAULT_TIMEOUT, NakamaLogger.LOG_LEVEL.ERROR
 	)
 
@@ -17,11 +23,10 @@ func init_nakama():
 	var device_id = OS.get_unique_id()
 
 	# Authenticate with the Nakama server using Device Authentication
-	var session = await client.authenticate_device_async(device_id)
+	session = await client.authenticate_device_async(device_id)
 	if session.is_exception():
-		printerr("An error occurred: %s" % session)
+		printerr("Failed to create session: ", session)
 		return
-	print("Successfully authenticated: %s" % session)
 
 	var socket = Nakama.create_socket_from(client)
 	socket.received_error.connect(self._on_socket_error)
