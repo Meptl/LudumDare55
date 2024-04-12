@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var MOTION_SPEED = 160  # Pixels/second.
+@export var MOTION_SPEED = 40  # Pixels/second.
 
 @onready var cam = $Camera2D
 
@@ -14,8 +14,8 @@ func _ready():
 
 
 func _physics_process(_delta):
-	if not is_multiplayer_authority():
-		return
+# if not is_multiplayer_authority():
+	# 	return
 
 	var motion = Vector2()
 	motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")

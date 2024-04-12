@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_i671x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lrlx"]
-size = Vector2(130, 126)
+size = Vector2(16, 16)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_40oy1"]
 properties/0/path = NodePath(".:position")
@@ -21,7 +21,7 @@ script = ExtResource("1_i671x")
 shape = SubResource("RectangleShape2D_2lrlx")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-2, 0)
+scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_cllj6")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]

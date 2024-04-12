@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsdhllxwsvehr"]
+
+[ext_resource type="PackedScene" uid="uid://bl85fqbdw1tjb" path="res://src/world/overworld/overworld.tscn" id="1_0cl3m"]
+[ext_resource type="Script" path="res://src/main/overworld.gd" id="1_vpguj"]
+[ext_resource type="PackedScene" uid="uid://csa2ar7yv5xdg" path="res://src/player/player.tscn" id="2_r6stn"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_vpguj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.58, 2.58)
+
+[node name="Overworld" parent="." instance=ExtResource("1_0cl3m")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_r6stn")]
