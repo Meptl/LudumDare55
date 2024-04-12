@@ -28,9 +28,6 @@ func _physics_process(_delta):
 	if NakamaConnection.multiplayer.get_unique_id() == 1:
 		update_remote_position.rpc(position)
 
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
-
 
 @rpc("any_peer")
 func update_remote_position(new_pos):
