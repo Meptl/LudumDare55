@@ -1,5 +1,6 @@
 extends HBoxContainer
 
+@export var pool_item_scene: PackedScene
 @export var pre: Array[PackedScene]
 
 var reagents = []
@@ -14,12 +15,11 @@ func add_reagent(reagent):
 	var info = reagent.instantiate()
 	add_child(info)
 
-	var texture_button = TextureButton.new()
-	texture_button.texture_normal = info.icon
-	add_child(texture_button)
-
-	texture_button.pressed.connect(remove_reagent.bind(texture_button))
-	reagents.append(reagent)
+	var pool_item = pool_item_scene.instantiate()
+	pool_item.texture_normal = info.icon
+	add_child(pool_item)
+	pool_item.remove_requested.connect(remove_reagent)
+	reagents.append([reagent, pool_item])
 
 
 func remove_reagent(src):

@@ -11,4 +11,9 @@ func _ready():
 
 
 func _on_CookButton_pressed():
-	space.follow_reagents(summon_pool.reagents)
+	var spec = []
+	for reagent in summon_pool.reagents:
+		var r = reagent[0]
+		var amount = reagent[1].amount()
+		spec.append([r, amount])
+	space.follow_reagents(spec)

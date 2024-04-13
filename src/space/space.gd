@@ -31,15 +31,25 @@ func _input(event):
 			drag_start = drag_end
 
 
-func follow_reagents(reagents):
+func follow_reagents(reagents_spec):
 	hist.append(icon.position)
-	for r in reagents:
-		var info = r.instantiate()
+	print(reagents_spec)
+	for spec in reagents_spec:
+		var reagent = spec[0]
+		var amount = spec[1]
+		var info = reagent.instantiate()
 		add_child(info)
 
+		print(info.reagent_name, ": ", amount * 100, "%")
+
 		var start_pos = icon.position
-		for point in info.path.get_baked_points():
-			icon.position = start_pos + point
+		var path = info.path
+		var travel = path.get_baked_length() * amount
+		var traversed = 0
+		while traversed <= travel:
+			# TODO: Move the actual movement to _process.
+			traversed += 1
+			icon.position = start_pos + path.sample_baked(traversed)
 			hist.append(icon.position)
 			queue_redraw()
 			await get_tree().physics_frame
