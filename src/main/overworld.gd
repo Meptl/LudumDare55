@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var player = $CharacterBody2D
+@onready var player = $OverworldPlayer
 @onready var overworld = $Overworld
 
 # func _physics_process(delta):
