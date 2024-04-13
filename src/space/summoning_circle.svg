@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   style="background-color:black"
+   id="svg11"
+   sodipodi:docname="summoning_circle.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs11" />
+  <sodipodi:namedview
+     id="namedview11"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.2140871"
+     inkscape:cx="224.03664"
+     inkscape:cy="421.71602"
+     inkscape:window-width="1256"
+     inkscape:window-height="1406"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg11" />
+  <g
+     id="g3"
+     style="stroke:#ffffff;stroke-opacity:1">
+    <animateTransform
+       attributeName="transform"
+       type="rotate"
+       from="0 256 256"
+       to="360 256 256"
+       dur="28.979773116905058s"
+       repeatCount="indefinite" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+       d="M 270.18363277326046 26.036993058985047 A 53.426416385418335 53.426416385418335 0 0 0 352.2980634619149 46.68960137278174 A 53.426416385418335 53.426416385418335 0 0 0 421.4069070740474 95.6107388501417 A 53.426416385418335 53.426416385418335 0 0 0 468.1766313345173 166.19333479336666 A 53.426416385418335 53.426416385418335 0 0 0 486.29072582195954 248.9048185086583 A 53.426416385418335 53.426416385418335 0 0 0 473.3027817021823 332.5745458001136 A 53.426416385418335 53.426416385418335 0 0 0 430.9668927972445 405.9024563670574 A 53.426416385418335 53.426416385418335 0 0 0 365.00075549501673 458.98520956344476 A 53.426416385418335 53.426416385418335 0 0 0 284.31346216915017 484.653685428414 A 53.426416385418335 53.426416385418335 0 0 0 199.80227888702998 479.4412140624662 A 53.426416385418335 53.426416385418335 0 0 0 122.88090924353895 444.05176860687345 A 53.426416385418335 53.426416385418335 0 0 0 63.93801044505412 383.2648897701006 A 53.426416385418335 53.426416385418335 0 0 0 30.93414758818801 305.29018237077713 A 53.426416385418335 53.426416385418335 0 0 0 28.32667523247781 220.65856271595104 A 53.426416385418335 53.426416385418335 0 0 0 56.46774696806523 140.80000000000015 A 53.426416385418335 53.426416385418335 0 0 0 111.5567551219977 76.49983562928568 A 53.426416385418335 53.426416385418335 0 0 0 186.15362388435472 36.442163101583134 A 53.426416385418335 53.426416385418335 0 0 0 270.18363277326046 26.036993058985047 Z"
+       id="path1" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+       d="M 298.3358889049378 29.52299783282902 A 53.426416385418335 53.426416385418335 0 0 0 377.28997032694275 60.10997192789688 A 53.426416385418335 53.426416385418335 0 0 0 439.8631691653672 117.15297977821933 A 53.426416385418335 53.426416385418335 0 0 0 477.6046281870175 192.94804708739213 A 53.426416385418335 53.426416385418335 0 0 0 485.41715421837597 277.25863002034475 A 53.426416385418335 53.426416385418335 0 0 0 462.24562232820637 358.69811717091443 A 53.426416385418335 53.426416385418335 0 0 0 411.21947629616676 426.26765452763993 A 53.426416385418335 53.426416385418335 0 0 0 339.23007988952014 470.84160165476356 A 53.426416385418335 53.426416385418335 0 0 0 256 486.4 A 53.426416385418335 53.426416385418335 0 0 0 172.76992011047992 470.84160165476356 A 53.426416385418335 53.426416385418335 0 0 0 100.78052370383321 426.2676545276398 A 53.426416385418335 53.426416385418335 0 0 0 49.754377671793605 358.6981171709144 A 53.426416385418335 53.426416385418335 0 0 0 26.58284578162403 277.25863002034475 A 53.426416385418335 53.426416385418335 0 0 0 34.39537181298249 192.94804708739213 A 53.426416385418335 53.426416385418335 0 0 0 72.13683083463278 117.15297977821936 A 53.426416385418335 53.426416385418335 0 0 0 134.71002967305714 60.109971927896964 A 53.426416385418335 53.426416385418335 0 0 0 213.66411109506205 29.52299783282905 A 53.426416385418335 53.426416385418335 0 0 0 298.3358889049378 29.52299783282902 Z"
+       id="path2" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+       d="M 325.8463761156452 36.442163101583105 A 53.426416385418335 53.426416385418335 0 0 0 400.44324487800213 76.49983562928554 A 53.426416385418335 53.426416385418335 0 0 0 455.53225303193466 140.79999999999995 A 53.426416385418335 53.426416385418335 0 0 0 483.67332476752216 220.65856271595086 A 53.426416385418335 53.426416385418335 0 0 0 481.065852411812 305.29018237077696 A 53.426416385418335 53.426416385418335 0 0 0 448.06198955494597 383.2648897701005 A 53.426416385418335 53.426416385418335 0 0 0 389.1190907564611 444.05176860687345 A 53.426416385418335 53.426416385418335 0 0 0 312.19772111297016 479.4412140624662 A 53.426416385418335 53.426416385418335 0 0 0 227.6865378308499 484.653685428414 A 53.426416385418335 53.426416385418335 0 0 0 146.9992445049832 458.98520956344476 A 53.426416385418335 53.426416385418335 0 0 0 81.03310720275545 405.90245636705737 A 53.426416385418335 53.426416385418335 0 0 0 38.69721829781767 332.5745458001136 A 53.426416385418335 53.426416385418335 0 0 0 25.709274178040488 248.9048185086582 A 53.426416385418335 53.426416385418335 0 0 0 43.82336866548263 166.19333479336677 A 53.426416385418335 53.426416385418335 0 0 0 90.59309292595262 95.61073885014167 A 53.426416385418335 53.426416385418335 0 0 0 159.7019365380851 46.68960137278174 A 53.426416385418335 53.426416385418335 0 0 0 241.81636722673954 26.036993058985047 A 53.426416385418335 53.426416385418335 0 0 0 325.8463761156452 36.442163101583105 Z"
+       id="path3" />
+  </g>
+  <g
+     id="g4"
+     style="stroke:#ffffff;stroke-opacity:1">
+    <animateTransform
+       attributeName="transform"
+       type="rotate"
+       from="0 256 256"
+       to="-360 256 256"
+       dur="153.75922116274333s"
+       repeatCount="indefinite" />
+    <circle
+       cx="256"
+       cy="256"
+       r="195.35777494699235"
+       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+       id="circle3" />
+    <path
+       id="textCircle"
+       stroke="none"
+       fill="none"
+       d="M 256 81.10916999173338 A 174.89083000826662 174.89083000826662 0 0 1 430.8908300082666 256 A 174.89083000826662 174.89083000826662 0 1 1 256 81.10916999173338 Z"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <text
+       style="font-size:16.6249691110399px;fill:#3affd8;font-family:Segoe UI Symbol;stroke:#ffffff;stroke-opacity:1"
+       id="text3"><textpath
+         href="#textCircle">ᛡᚢᚸᛨᚳᛧᚭᛉᚿᚪᚵᚸᛅᛊᛏᚨᚻᛒᚹᚸᚽᛋᛕᚼᛄᛆᚻᚾᛤᛁᚥᚶᚿᚱᛡᛁᛓᚨᚰᚷᛎᛄᛛᚱᚡᚢᛂᚥᛎᛀᛖᚷᛥᛞᛕᚭᚫᛣᛛᚴᛘᛊᚴᚭᚢᛂᛞᛟᚺᚲᛀᛠᚪ</textpath></text>
+    <circle
+       cx="256"
+       cy="256"
+       r="168.87459468686913"
+       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+       id="circle4" />
+  </g>
+  <g
+     id="g11"
+     style="fill:none;stroke:#ffffff;stroke-opacity:1">
+    <animateTransform
+       attributeName="transform"
+       type="rotate"
+       from="0 256 256"
+       to="360 256 256"
+       dur="184.9939023191302s"
+       repeatCount="indefinite" />
+    <polygon
+       points="256,138.30202394035726 280.47078520838846,213.61535671796622 357.9294372416633,197.15101197017862 304.9415704167769,256 357.9294372416633,314.8489880298213 280.47078520838846,298.3846432820338 256,373.69797605964277 231.52921479161154,298.3846432820338 154.07056275833673,314.84898802982144 207.05842958322307,256 154.0705627583367,197.15101197017862 231.5292147916115,213.61535671796625 "
+       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+       id="polygon4" />
+    <g
+       transform="rotate(0 256 256)"
+       id="g5"
+       style="fill:none;stroke:#ffffff;stroke-opacity:1">
+      <circle
+         cx="256"
+         cy="138.30202394035726"
+         r="34.2891591585395"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+         id="circle5" />
+      <text
+         x="256"
+         y="150.30202394035726"
+         style="font-size:34.2891591585395px;fill:none;text-anchor:middle;font-family:Segoe UI Symbol;stroke:#ffffff;stroke-opacity:1"
+         id="text5">🝥</text>
+    </g>
+    <g
+       transform="rotate(60 256 256)"
+       id="g6"
+       style="fill:none;stroke:#ffffff;stroke-opacity:1">
+      <circle
+         cx="256"
+         cy="138.30202394035726"
+         r="34.2891591585395"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+         id="circle6" />
+      <text
+         x="256"
+         y="146.30202394035726"
+         style="font-size:34.2891591585395px;fill:none;text-anchor:middle;font-family:Segoe UI Symbol;stroke:#ffffff;stroke-opacity:1"
+         id="text6">🜴</text>
+    </g>
+    <g
+       transform="rotate(120 256 256)"
+       id="g7"
+       style="fill:none;stroke:#ffffff;stroke-opacity:1">
+      <circle
+         cx="256"
+         cy="138.30202394035726"
+         r="34.2891591585395"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+         id="circle7" />
+      <text
+         x="256"
+         y="150.30202394035726"
+         style="font-size:34.2891591585395px;fill:none;text-anchor:middle;font-family:Segoe UI Symbol;stroke:#ffffff;stroke-opacity:1"
+         id="text7">🝀</text>
+    </g>
+    <g
+       transform="rotate(180 256 256)"
+       id="g8"
+       style="fill:none;stroke:#ffffff;stroke-opacity:1">
+      <circle
+         cx="256"
+         cy="138.30202394035726"
+         r="34.2891591585395"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+         id="circle8" />
+      <text
+         x="256"
+         y="150.80202394035726"
+         style="font-size:34.2891591585395px;fill:none;text-anchor:middle;font-family:Segoe UI Symbol;stroke:#ffffff;stroke-opacity:1"
+         id="text8">🝩</text>
+    </g>
+    <g
+       transform="rotate(240 256 256)"
+       id="g9"
+       style="fill:none;stroke:#ffffff;stroke-opacity:1">
+      <circle
+         cx="256"
+         cy="138.30202394035726"
+         r="34.2891591585395"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+         id="circle9" />
+      <text
+         x="256"
+         y="150.30202394035726"
+         style="font-size:34.2891591585395px;fill:none;text-anchor:middle;font-family:Segoe UI Symbol;stroke:#ffffff;stroke-opacity:1"
+         id="text9">🝓</text>
+    </g>
+    <g
+       transform="rotate(300 256 256)"
+       id="g10"
+       style="fill:none;stroke:#ffffff;stroke-opacity:1">
+      <circle
+         cx="256"
+         cy="138.30202394035726"
+         r="34.2891591585395"
+         style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+         id="circle10" />
+      <text
+         x="256"
+         y="151.80202394035726"
+         style="font-size:34.2891591585395px;fill:none;text-anchor:middle;font-family:Segoe UI Symbol;stroke:#ffffff;stroke-opacity:1"
+         id="text10">🜚</text>
+    </g>
+    <polygon
+       points="288.19920256849383,200.22934518816635 279.19074227988386,242.6108187020018 320.3984051369877,256 279.19074227988386,269.38918129799816 288.1992025684939,311.77065481183365 256,282.7783625959964 223.80079743150614,311.77065481183365 232.80925772011614,269.38918129799816 191.60159486301228,256 232.80925772011614,242.6108187020018 223.80079743150617,200.22934518816635 256,229.22163740400362 "
+       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-opacity:1"
+       id="polygon10" />
+  </g>
+</svg>

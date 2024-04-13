@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=8 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
 [ext_resource type="PackedScene" uid="uid://dhqwixi573bmv" path="res://src/space/space.tscn" id="2_0lakp"]
 [ext_resource type="PackedScene" uid="uid://c1glt7ryc0osd" path="res://src/reagents/poo.tscn" id="2_2lk2o"]
 [ext_resource type="PackedScene" uid="uid://6upy6c1pqyqe" path="res://src/ui/summon_pool.tscn" id="3_u2il2"]
+[ext_resource type="Texture2D" uid="uid://cykr2yypk3hvw" path="res://src/ui/panel-border-016.png" id="4_bqp22"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skn5s"]
+bg_color = Color(0.329412, 0.294118, 0.290196, 1)
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -28,16 +32,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/Control"]
-layout_mode = 2
-offset_left = 4.0
-offset_right = 818.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/Control/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(814, 648)
+size = Vector2i(778, 648)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Space" parent="HBoxContainer/Control/SubViewportContainer/SubViewport" instance=ExtResource("2_0lakp")]
@@ -51,6 +58,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 70
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control/MarginContainer"]
@@ -68,22 +78,77 @@ text = "Cook"
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_skn5s")
 
-[node name="ClosenessToCreature" type="Label" parent="HBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer"]
 layout_mode = 2
-text = "PLACEHOLDER"
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="ReagentTable" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/PanelContainer/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_bqp22")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Reagent"
+
+[node name="Spacer2" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Cost"
+
+[node name="Spacer" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Path"
+
+[node name="ReagentTable" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="ReagentListing" parent="HBoxContainer/PanelContainer/ReagentTable" instance=ExtResource("1_bowou")]
+[node name="ReagentListing" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
 reagent = ExtResource("2_2lk2o")
 
-[node name="ReagentListing2" parent="HBoxContainer/PanelContainer/ReagentTable" instance=ExtResource("1_bowou")]
+[node name="ReagentListing2" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ClosenessToCreature" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PLACEHOLDER"
 
 [connection signal="pressed" from="HBoxContainer/Control/MarginContainer/VBoxContainer/CookButton" to="." method="_on_CookButton_pressed"]

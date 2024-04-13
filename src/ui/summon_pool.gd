@@ -27,5 +27,6 @@ func remove_reagent(src):
 	for child in get_children():
 		if child == src:
 			break
+		i += 1
 	reagents.remove_at(i)
 	src.queue_free()

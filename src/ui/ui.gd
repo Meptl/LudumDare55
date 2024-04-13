@@ -3,6 +3,7 @@ extends Control
 @onready var reagent_table = %ReagentTable
 @onready var summon_pool = %SummonPool
 @onready var space = %Space
+@onready var closeness_label = %ClosenessToCreature
 
 
 func _ready():
@@ -17,5 +18,4 @@ func _on_CookButton_pressed():
 		var amount = reagent[1].amount()
 		spec.append([r, amount])
 	await space.follow_reagents(spec)
-	$HBoxContainer/PanelContainer/ClosenessToCreature.text = "Creature%: " + str(space.getTopTile())
-	#space.getTopTile()
+	closeness_label.text = "Creature%: " + str(space.getTopTile())

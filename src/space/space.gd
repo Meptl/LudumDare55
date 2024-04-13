@@ -4,7 +4,7 @@ extends Node2D
 @export var pre: Array[PackedScene]
 @onready var goalList = [$RuneGreyTile001, $RuneGreyTile002, $RuneGreyTile003]
 @onready var cam = $Camera2D
-@onready var icon = $Icon
+@onready var head = $Head
 
 var sortedDictList
 var dragging = false
@@ -33,7 +33,7 @@ func _input(event):
 
 
 func follow_reagents(reagents_spec):
-	hist.append(icon.position)
+	hist.append(head.position)
 	print(reagents_spec)
 	for spec in reagents_spec:
 		var reagent = spec[0]
@@ -43,15 +43,15 @@ func follow_reagents(reagents_spec):
 
 		print(info.reagent_name, ": ", amount * 100, "%")
 
-		var start_pos = icon.position
+		var start_pos = head.position
 		var path = info.path
 		var travel = path.get_baked_length() * amount
 		var traversed = 0
 		while traversed <= travel:
 			# TODO: Move the actual movement to _process.
 			traversed += 1
-			icon.position = start_pos + path.sample_baked(traversed)
-			hist.append(icon.position)
+			head.position = start_pos + path.sample_baked(traversed)
+			hist.append(head.position)
 			queue_redraw()
 			await get_tree().physics_frame
 	sortedDictList = sortTilesByDistance(makeTileDistanceList())
@@ -63,7 +63,7 @@ func _draw():
 
 
 func calcGoalDistance(inputGoal):
-	return get_node("Icon").position.distance_to(inputGoal.position)
+	return head.position.distance_to(inputGoal.position)
 
 
 #get a list of distances betweent he node and tiles

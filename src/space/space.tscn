@@ -1,19 +1,37 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhqwixi573bmv"]
+[gd_scene load_steps=13 format=3 uid="uid://dhqwixi573bmv"]
 
 [ext_resource type="Script" path="res://src/space/space.gd" id="1_8pl8e"]
 [ext_resource type="PackedScene" uid="uid://bqcybo8lgi5mo" path="res://src/reagents/grass.tscn" id="2_qqwj6"]
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_wh33o"]
 [ext_resource type="PackedScene" uid="uid://c1glt7ryc0osd" path="res://src/reagents/poo.tscn" id="3_q204g"]
+[ext_resource type="Texture2D" uid="uid://cto8jynpsh58s" path="res://src/space/webb-dark.png" id="4_pdcjv"]
 [ext_resource type="Texture2D" uid="uid://es1436iag03t" path="res://src/reagents/runeGrey_tile_001.png" id="5_ag8hi"]
 [ext_resource type="Texture2D" uid="uid://ciqveqiu04bgu" path="res://src/reagents/runeGrey_tile_002.png" id="6_f6s8w"]
+[ext_resource type="Texture2D" uid="uid://pg5da6eylav2" path="res://src/space/summoning_circle.svg" id="7_28xyg"]
 [ext_resource type="Texture2D" uid="uid://cnxrop6c0mmxd" path="res://src/reagents/runeGrey_tile_003.png" id="7_f6ksk"]
+[ext_resource type="Shader" path="res://src/shaders/boxblur.gdshader" id="10_1hbuv"]
+[ext_resource type="Script" path="res://src/space/spin.gd" id="10_n7cbw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ky7l"]
+shader = ExtResource("10_1hbuv")
+shader_parameter/strength = 4.387
+shader_parameter/color = Color(1, 0.639216, 0.639216, 0.556863)
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_8pl8e")
 pre = Array[PackedScene]([ExtResource("2_qqwj6"), ExtResource("3_q204g")])
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-1, 61)
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -6055.0
+offset_top = -4209.0
+offset_right = 6034.0
+offset_bottom = 4141.0
+scale = Vector2(0.795, 0.795)
+texture = ExtResource("4_pdcjv")
+stretch_mode = 1
+
+[node name="Head" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.385, 0.385)
 texture = ExtResource("2_wh33o")
 
@@ -30,3 +48,12 @@ texture = ExtResource("6_f6s8w")
 [node name="RuneGreyTile003" type="Sprite2D" parent="."]
 position = Vector2(295, 118)
 texture = ExtResource("7_f6ksk")
+
+[node name="SummoningCircle" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_28xyg")
+script = ExtResource("10_n7cbw")
+
+[node name="SummoningCircleGlow" type="Sprite2D" parent="SummoningCircle"]
+material = SubResource("ShaderMaterial_3ky7l")
+texture = ExtResource("7_28xyg")
