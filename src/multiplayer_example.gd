@@ -28,6 +28,7 @@ func add_player(peer_id):
 	# sitting on the spawn point.
 	if peer_id != NakamaConnection.multiplayer.get_unique_id():
 		player.position = Vector2(-5000, 5000)
+	player.MOTION_SPEED = 300
 	add_child(player)
 
 

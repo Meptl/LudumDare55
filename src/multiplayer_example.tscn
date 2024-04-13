@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmkwgjyw0028k"]
 
-[ext_resource type="Script" path="res://src/dungeon.gd" id="1_wjk1s"]
-[ext_resource type="Texture2D" uid="uid://bej36i4dvj6hu" path="res://src/sticker.webp" id="2_41fhg"]
+[ext_resource type="Script" path="res://src/multiplayer_example.gd" id="1_w8j6h"]
+[ext_resource type="Texture2D" uid="uid://bej36i4dvj6hu" path="res://src/sticker.webp" id="2_p5hee"]
 
 [node name="Dungeon" type="Node2D"]
-script = ExtResource("1_wjk1s")
+script = ExtResource("1_w8j6h")
 
 [node name="Host" type="Button" parent="."]
 offset_left = 344.0
@@ -35,7 +35,7 @@ expand_to_text_length = true
 
 [node name="Sticker" type="Sprite2D" parent="."]
 position = Vector2(77, 86)
-texture = ExtResource("2_41fhg")
+texture = ExtResource("2_p5hee")
 
 [connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
