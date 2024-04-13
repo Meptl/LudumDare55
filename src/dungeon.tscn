@@ -23,7 +23,7 @@ text = "Join
 "
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://src/player/player.tscn")
+_spawnable_scenes = PackedStringArray("res://src/player/underworld/player.tscn")
 spawn_path = NodePath("..")
 
 [node name="LineEdit" type="LineEdit" parent="."]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw31vm7ywiwuy"]
+
+[ext_resource type="PackedScene" uid="uid://bl85fqbdw1tjb" path="res://src/world/overworld/overworld.tscn" id="1_ylyck"]
+[ext_resource type="PackedScene" uid="uid://bu12v8ewu4thh" path="res://src/player/underworld/player.tscn" id="2_xoojf"]
+
+[node name="Underworld" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.58, 2.58)
+
+[node name="Overworld" parent="." instance=ExtResource("1_ylyck")]
+
+[node name="UnderworldPlayer" parent="." instance=ExtResource("2_xoojf")]

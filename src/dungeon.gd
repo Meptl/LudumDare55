@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var player_scene = preload("res://src/player/player.tscn")
+@export var player_scene = preload("res://src/player/underworld/player.tscn")
 
 
 func _on_host_pressed():
