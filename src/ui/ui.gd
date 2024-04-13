@@ -16,4 +16,6 @@ func _on_CookButton_pressed():
 		var r = reagent[0]
 		var amount = reagent[1].amount()
 		spec.append([r, amount])
-	space.follow_reagents(spec)
+	await space.follow_reagents(spec)
+	$HBoxContainer/PanelContainer/ClosenessToCreature.text = "Creature%: " + str(space.getTopTile())
+	#space.getTopTile()

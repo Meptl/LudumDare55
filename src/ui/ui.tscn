@@ -69,6 +69,10 @@ text = "Cook"
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
 
+[node name="ClosenessToCreature" type="Label" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+text = "PLACEHOLDER"
+
 [node name="ReagentTable" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(330, 0)
