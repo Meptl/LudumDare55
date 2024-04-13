@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_s48fh"]
 _data = {
-"points": PackedVector2Array(-16.565, -54.0937, 16.565, 54.0937, 0, 0, -25.2475, 0.535885, 25.2475, -0.535885, 54, 50, 0, 0, 0, 0, 108, 87)
+"points": PackedVector2Array(-6.17513, -35.4574, 6.17513, 35.4574, 0, 0, -28.0396, -22.5189, 28.0396, 22.5189, 39, 74, 0, 0, 0, 0, 108, 87)
 }
 point_count = 3
 
@@ -15,6 +15,7 @@ anchors_preset = 0
 script = ExtResource("1_78et4")
 
 [node name="Path2D" type="Path2D" parent="."]
+editor_description = "ALSO MAKE PATH2D UNIQUE"
 position = Vector2(31, 25)
 curve = SubResource("Curve2D_s48fh")
 

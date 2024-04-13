@@ -17,6 +17,7 @@ script = ExtResource("1_dh6sa")
 reagent = ExtResource("2_h1mql")
 
 [node name="ReagentListing" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 

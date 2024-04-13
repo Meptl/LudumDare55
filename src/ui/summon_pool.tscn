@@ -1,15 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://6upy6c1pqyqe"]
+[gd_scene load_steps=2 format=3 uid="uid://6upy6c1pqyqe"]
 
 [ext_resource type="Script" path="res://src/ui/summon_pool.gd" id="1_c76vf"]
-[ext_resource type="PackedScene" uid="uid://bqcybo8lgi5mo" path="res://src/reagents/grass.tscn" id="2_mqh2c"]
-[ext_resource type="PackedScene" uid="uid://c1glt7ryc0osd" path="res://src/reagents/poo.tscn" id="3_noun5"]
 
 [node name="SummonPool" type="HBoxContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 57.0
 alignment = 1
 script = ExtResource("1_c76vf")
-pre = Array[PackedScene]([ExtResource("2_mqh2c"), ExtResource("3_noun5"), ExtResource("3_noun5")])
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 2
