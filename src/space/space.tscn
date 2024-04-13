@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhqwixi573bmv"]
+[gd_scene load_steps=5 format=3 uid="uid://dhqwixi573bmv"]
 
 [ext_resource type="Script" path="res://src/space/space.gd" id="1_8pl8e"]
+[ext_resource type="PackedScene" uid="uid://bqcybo8lgi5mo" path="res://src/reagents/grass.tscn" id="2_qqwj6"]
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_wh33o"]
+[ext_resource type="PackedScene" uid="uid://c1glt7ryc0osd" path="res://src/reagents/poo.tscn" id="3_q204g"]
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_8pl8e")
+pre = Array[PackedScene]([ExtResource("2_qqwj6"), ExtResource("3_q204g")])
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(-1, 61)
+scale = Vector2(0.385, 0.385)
 texture = ExtResource("2_wh33o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
