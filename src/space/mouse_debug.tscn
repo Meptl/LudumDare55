@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://0rr1puga1sfx"]
+[gd_scene load_steps=6 format=3 uid="uid://0rr1puga1sfx"]
 
 [ext_resource type="Script" path="res://src/space/mouse_debug.gd" id="1_1kvwx"]
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_nofbq"]
 [ext_resource type="Texture2D" uid="uid://es1436iag03t" path="res://src/reagents/runeGrey_tile_001.png" id="3_kfpef"]
 [ext_resource type="Texture2D" uid="uid://cnxrop6c0mmxd" path="res://src/reagents/runeGrey_tile_003.png" id="4_7gdq2"]
+[ext_resource type="Texture2D" uid="uid://ciqveqiu04bgu" path="res://src/reagents/runeGrey_tile_002.png" id="5_xn5hs"]
 
 [node name="MouseDebug" type="Node2D"]
 script = ExtResource("1_1kvwx")
@@ -20,3 +21,7 @@ texture = ExtResource("3_kfpef")
 [node name="RuneGreyTile003" type="Sprite2D" parent="."]
 position = Vector2(260, -210)
 texture = ExtResource("4_7gdq2")
+
+[node name="RuneGreyTile002" type="Sprite2D" parent="."]
+position = Vector2(55, 243)
+texture = ExtResource("5_xn5hs")
