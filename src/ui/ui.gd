@@ -19,4 +19,3 @@ func _on_CookButton_pressed():
 	await space.follow_reagents(spec)
 	$HBoxContainer/PanelContainer/ClosenessToCreature.text = "Creature%: " + str(space.getTopTile())
 	#space.getTopTile()
-	

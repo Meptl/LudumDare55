@@ -2,7 +2,7 @@ extends Node2D
 
 @export var speed = 2.0
 @export var pre: Array[PackedScene]
-@onready var goalList =[$RuneGreyTile001,$RuneGreyTile002,$RuneGreyTile003]
+@onready var goalList = [$RuneGreyTile001, $RuneGreyTile002, $RuneGreyTile003]
 @onready var cam = $Camera2D
 @onready var icon = $Icon
 
@@ -55,25 +55,30 @@ func follow_reagents(reagents_spec):
 			queue_redraw()
 			await get_tree().physics_frame
 	sortedDictList = sortTilesByDistance(makeTileDistanceList())
-	
-			
+
+
 func _draw():
 	for i in range(1, hist.size()):
 		draw_line(hist[i - 1], hist[i], Color.WHITE, 2)
 
+
 func calcGoalDistance(inputGoal):
 	return get_node("Icon").position.distance_to(inputGoal.position)
+
+
 #get a list of distances betweent he node and tiles
 func makeTileDistanceList():
 	var unsortedDictonary = {}
 	for element in goalList:
-			var tempDis = calcGoalDistance(element)
-			if tempDis < 500:
-				unsortedDictonary[element] = tempDis
-	print("Unsorted Dict: ",unsortedDictonary)
+		var tempDis = calcGoalDistance(element)
+		if tempDis < 500:
+			unsortedDictonary[element] = tempDis
+	print("Unsorted Dict: ", unsortedDictonary)
 	return unsortedDictonary
+
+
 #Given a dictonary of nodes where each node has a distance assigned, sort by distnace
-func sortTilesByDistance(inputDictonary):	
+func sortTilesByDistance(inputDictonary):
 	var sorted_pairs = []
 	for key in inputDictonary.keys():
 		sorted_pairs.append([key, inputDictonary[key]])
@@ -82,13 +87,14 @@ func sortTilesByDistance(inputDictonary):
 	for pair in sorted_pairs:
 		sorted_dictionary[pair[0]] = pair[1]
 	return sorted_dictionary
+
+
 #Get the top N tiles from a given dictonary, and assign them percentages
 func getTopTile():
 	if sortedDictList == null:
 		return "0"
 	var closestNode = sortedDictList.keys()[0]
 	var distance = sortedDictList.values()[0]
-	var creaturePercent = ((500-distance)/500)*100
-	print("Closest Tile:",closestNode,"Percentage: ", creaturePercent)
+	var creaturePercent = ((500 - distance) / 500) * 100
+	print("Closest Tile:", closestNode, "Percentage: ", creaturePercent)
 	return creaturePercent
-	
