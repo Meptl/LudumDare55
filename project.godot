@@ -11,13 +11,12 @@ config_version=5
 [application]
 
 config/name="Ludum Dare 55"
+run/main_scene="res://src/ui/ui.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
-NakamaConnection="*res://src/autoloads/NakamaConnection.gd"
 QuickQuit="*res://src/autoloads/quick_quit.gd"
 
 [editor_plugins]

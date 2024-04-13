@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhqwixi573bmv"]
+
+[ext_resource type="Script" path="res://src/space/space.gd" id="1_8pl8e"]
+[ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_wh33o"]
+
+[node name="Space" type="Node2D"]
+script = ExtResource("1_8pl8e")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-1, 61)
+texture = ExtResource("2_wh33o")
+
+[node name="Camera2D" type="Camera2D" parent="."]

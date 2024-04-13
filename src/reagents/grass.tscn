@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqcybo8lgi5mo"]
+
+[ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_a5246"]
+[ext_resource type="Texture2D" uid="uid://es1436iag03t" path="res://src/reagents/runeGrey_tile_001.png" id="2_at6e6"]
+
+[node name="Reagent" instance=ExtResource("1_a5246")]
+reagent_name = "Grass"
+cost = 8
+
+[node name="Icon" parent="." index="1"]
+texture = ExtResource("2_at6e6")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1glt7ryc0osd"]
+
+[ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_vt8um"]
+[ext_resource type="Texture2D" uid="uid://ciqveqiu04bgu" path="res://src/reagents/runeGrey_tile_002.png" id="2_4i6tx"]
+
+[node name="Reagent" instance=ExtResource("1_vt8um")]
+reagent_name = "Poo"
+cost = 3
+
+[node name="Icon" parent="." index="1"]
+texture = ExtResource("2_4i6tx")

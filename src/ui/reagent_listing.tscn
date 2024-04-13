@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm3i6u75idafx"]
+
+[ext_resource type="Script" path="res://src/ui/reagent_listing.gd" id="1_dh6sa"]
+[ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_4l33i"]
+[ext_resource type="PackedScene" uid="uid://bqcybo8lgi5mo" path="res://src/reagents/grass.tscn" id="2_h1mql"]
+
+[node name="ReagentListing" type="Button"]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -827.0
+offset_bottom = -508.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dh6sa")
+reagent = ExtResource("2_h1mql")
+
+[node name="ReagentListing" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="ReagentListing"]
+layout_mode = 2
+texture = ExtResource("2_4l33i")
+
+[node name="Name" type="Label" parent="ReagentListing"]
+layout_mode = 2
+text = "Foo"
+
+[node name="Spacer" type="Control" parent="ReagentListing"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Cost" type="Label" parent="ReagentListing"]
+layout_mode = 2
+text = "4"
+
+[node name="Control" type="Control" parent="ReagentListing"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Line2D" type="Line2D" parent="ReagentListing/Control"]
+position = Vector2(11, 35)
+points = PackedVector2Array(0, 0, 50, 50, 100, 60)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

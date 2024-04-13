@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc7rcobagf62v"]
+
+[ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
+[ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
+[ext_resource type="PackedScene" uid="uid://dhqwixi573bmv" path="res://src/space/space.tscn" id="2_0lakp"]
+[ext_resource type="PackedScene" uid="uid://c1glt7ryc0osd" path="res://src/reagents/poo.tscn" id="2_2lk2o"]
+[ext_resource type="PackedScene" uid="uid://6upy6c1pqyqe" path="res://src/ui/summon_pool.tscn" id="3_u2il2"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jy0v1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/Control"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 818.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/Control/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(814, 648)
+render_target_update_mode = 4
+
+[node name="Space" parent="HBoxContainer/Control/SubViewportContainer/SubViewport" instance=ExtResource("2_0lakp")]
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="SummonPool" parent="HBoxContainer/Control/MarginContainer/VBoxContainer" instance=ExtResource("3_u2il2")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="ReagentTable" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ReagentListing" parent="HBoxContainer/PanelContainer/ReagentTable" instance=ExtResource("1_bowou")]
+layout_mode = 2
+reagent = ExtResource("2_2lk2o")
+
+[node name="ReagentListing2" parent="HBoxContainer/PanelContainer/ReagentTable" instance=ExtResource("1_bowou")]
+layout_mode = 2
