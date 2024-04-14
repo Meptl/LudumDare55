@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dau0vtlkbgurg"]
+[gd_scene load_steps=8 format=3 uid="uid://dau0vtlkbgurg"]
 
 [ext_resource type="Script" path="res://src/ui/creation_popup.gd" id="1_yompi"]
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_hre03"]
@@ -13,6 +13,9 @@ corner_radius_bottom_left = 12
 [sub_resource type="LabelSettings" id="LabelSettings_l5tqt"]
 font_size = 14
 font_color = Color(0.690196, 0.690196, 0.690196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_20kk3"]
+font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_xfinx"]
 font_size = 18
@@ -67,6 +70,29 @@ unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_hre03")
 stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer/Icon"]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -67.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 0.349066
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = -25
+theme_override_constants/margin_bottom = -30
+
+[node name="Grade" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/Icon/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "F"
+label_settings = SubResource("LabelSettings_20kk3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2

@@ -1,6 +1,8 @@
 extends Node2D
 
-signal cooked(creature)
+signal cooked(creature, distance)
+
+const COOK_THRESHOLD = 100
 
 @export var failed_creation: PackedScene
 
@@ -52,11 +54,18 @@ func follow_reagents(reagents_spec):
 
 
 func cook():
-	sortedDictList = sortTilesByDistance(makeTileDistanceList())
-	if getTopTile() < 30:
-		cooked.emit(failed_creature)
+	var closest_node = goals[0]
+	var closest_dist = goals[0].position.distance_to(head.position)
+	for goal in goals:
+		var dist = goal.position.distance_to(head.position)
+		if dist < closest_node.position.distance_to(head.position):
+			closest_node = goal
+			closest_dist = dist
+
+	if closest_dist > COOK_THRESHOLD:
+		cooked.emit(failed_creature, null)
 	else:
-		cooked.emit(sortedDictList.keys()[0])
+		cooked.emit(closest_node, closest_dist)
 
 
 func _draw():
