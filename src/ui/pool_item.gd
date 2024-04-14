@@ -28,7 +28,7 @@ func _physics_process(delta):
 		charge += delta
 	elif uncharging:
 		charge -= delta
-	charge = clampf(charge, 0.0, 1.0)
+	charge = clampf(charge, 0.0, charge_max)
 	# 1.0 is darkened. 0.0 is done.
 	darken.material.set_shader_parameter(
 		"EdgePosition", clampf((charge_max - charge) / charge_max, 0.0, 1.0)
