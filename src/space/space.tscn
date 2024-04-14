@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhqwixi573bmv"]
+[gd_scene load_steps=14 format=3 uid="uid://dhqwixi573bmv"]
 
 [ext_resource type="Script" path="res://src/space/space.gd" id="1_8pl8e"]
+[ext_resource type="Texture2D" uid="uid://d4krgmc41ul07" path="res://src/goals/poo.png" id="2_hr4qa"]
 [ext_resource type="PackedScene" uid="uid://bqcybo8lgi5mo" path="res://src/reagents/grass.tscn" id="2_qqwj6"]
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_wh33o"]
 [ext_resource type="PackedScene" uid="uid://c1glt7ryc0osd" path="res://src/reagents/poo.tscn" id="3_q204g"]
@@ -19,9 +20,11 @@ shader_parameter/color = Color(1, 0.639216, 0.639216, 0.556863)
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_8pl8e")
+failed_creation_icon = ExtResource("2_hr4qa")
 pre = Array[PackedScene]([ExtResource("2_qqwj6"), ExtResource("3_q204g")])
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 offset_left = -6055.0
 offset_top = -4209.0
 offset_right = 6034.0

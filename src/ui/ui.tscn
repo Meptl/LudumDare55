@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=9 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1glt7ryc0osd" path="res://src/reagents/poo.tscn" id="2_2lk2o"]
 [ext_resource type="PackedScene" uid="uid://6upy6c1pqyqe" path="res://src/ui/summon_pool.tscn" id="3_u2il2"]
 [ext_resource type="Texture2D" uid="uid://cykr2yypk3hvw" path="res://src/ui/panel-border-016.png" id="4_bqp22"]
+[ext_resource type="PackedScene" uid="uid://dau0vtlkbgurg" path="res://src/ui/creation_popup.tscn" id="7_f7j84"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skn5s"]
 bg_color = Color(0.329412, 0.294118, 0.290196, 1)
@@ -150,5 +151,10 @@ size_flags_vertical = 3
 unique_name_in_owner = true
 layout_mode = 2
 text = "PLACEHOLDER"
+
+[node name="CreationPopup" parent="." instance=ExtResource("7_f7j84")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="HBoxContainer/Control/MarginContainer/VBoxContainer/CookButton" to="." method="_on_CookButton_pressed"]

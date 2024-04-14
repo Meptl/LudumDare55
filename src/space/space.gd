@@ -1,5 +1,9 @@
 extends Node2D
 
+signal cooked(image, name)
+
+@export var failed_creation_icon: Texture
+
 @export var speed = 2.0
 @export var pre: Array[PackedScene]
 @onready var goalList = [$RuneGreyTile001, $RuneGreyTile002, $RuneGreyTile003]
@@ -54,7 +58,15 @@ func follow_reagents(reagents_spec):
 			hist.append(head.position)
 			queue_redraw()
 			await get_tree().physics_frame
+
+
+func cook():
 	sortedDictList = sortTilesByDistance(makeTileDistanceList())
+	if getTopTile() < 30:
+		cooked.emit(failed_creation_icon, "poo")
+	else:
+		var creature = sortedDictList.keys()[0]
+		cooked.emit(creature.texture, creature.name)
 
 
 func _draw():
@@ -71,7 +83,7 @@ func makeTileDistanceList():
 	var unsortedDictonary = {}
 	for element in goalList:
 		var tempDis = calcGoalDistance(element)
-		if tempDis < 500:
+		if tempDis < 300:
 			unsortedDictonary[element] = tempDis
 	print("Unsorted Dict: ", unsortedDictonary)
 	return unsortedDictonary
@@ -95,6 +107,6 @@ func getTopTile():
 		return "0"
 	var closestNode = sortedDictList.keys()[0]
 	var distance = sortedDictList.values()[0]
-	var creaturePercent = ((500 - distance) / 500) * 100
+	var creaturePercent = ((300 - distance) / 300) * 100
 	print("Closest Tile:", closestNode, "Percentage: ", creaturePercent)
 	return creaturePercent
