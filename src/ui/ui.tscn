@@ -1,13 +1,27 @@
-[gd_scene load_steps=13 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=17 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
 [ext_resource type="PackedScene" uid="uid://dhqwixi573bmv" path="res://src/space/space.tscn" id="2_0lakp"]
 [ext_resource type="PackedScene" uid="uid://c1glt7ryc0osd" path="res://src/reagents/poo.tscn" id="2_2lk2o"]
 [ext_resource type="PackedScene" uid="uid://6upy6c1pqyqe" path="res://src/ui/summon_pool.tscn" id="3_u2il2"]
+[ext_resource type="Texture2D" uid="uid://co2bxlo7u0m18" path="res://src/ui/tutorial/mouse_left.png" id="4_4ur7c"]
 [ext_resource type="Texture2D" uid="uid://cykr2yypk3hvw" path="res://src/ui/panel-border-016.png" id="4_bqp22"]
+[ext_resource type="Texture2D" uid="uid://dmh1j5v3g4ixl" path="res://src/ui/tutorial/mouse_right.png" id="5_sg04o"]
 [ext_resource type="PackedScene" uid="uid://dau0vtlkbgurg" path="res://src/ui/creation_popup.tscn" id="7_f7j84"]
 [ext_resource type="PackedScene" uid="uid://blgkg48ox8l5w" path="res://src/ui/goalman/goalman.tscn" id="8_2u46p"]
+[ext_resource type="Texture2D" uid="uid://cdpil1a8uli2" path="res://src/ui/tutorial/arrow.png" id="8_7n5rd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hajjo"]
+bg_color = Color(0.454902, 0.454902, 0.454902, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvq0u"]
 content_margin_left = 10.0
@@ -107,6 +121,54 @@ alignment = 2
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="Tut2" type="Control" parent="HBoxContainer/Control/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Node2D" type="Node2D" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2"]
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2/Node2D"]
+offset_left = -139.0
+offset_top = -134.0
+offset_right = 35.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hajjo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2/Node2D/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2/Node2D/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2/Node2D/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_4ur7c")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2/Node2D/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Hold to charge"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2/Node2D/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2/Node2D/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("5_sg04o")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2/Node2D/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "To remove reagent"
+
+[node name="arrow" type="Sprite2D" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2/Node2D"]
+texture_filter = 1
+position = Vector2(-25.0001, -66)
+rotation = 2.73842
+scale = Vector2(2, 2)
+texture = ExtResource("8_7n5rd")
+
 [node name="CookButton" type="Button" parent="HBoxContainer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -118,6 +180,28 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_alhft")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_alhft")
 theme_override_styles/focus = SubResource("StyleBoxFlat_g5325")
 text = "Cook"
+
+[node name="Tut3" type="Control" parent="HBoxContainer/Control/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Node2D" type="Node2D" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut3"]
+
+[node name="Label" type="Label" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut3/Node2D"]
+offset_left = 70.0
+offset_top = -15.0
+offset_right = 190.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hajjo")
+text = "Start the ritual!"
+
+[node name="arrow" type="Sprite2D" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut3/Node2D"]
+texture_filter = 1
+position = Vector2(56.9999, -21)
+rotation = -1.12748
+scale = Vector2(2, 2)
+texture = ExtResource("8_7n5rd")
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -185,42 +269,50 @@ reagent = ExtResource("2_2lk2o")
 [node name="ReagentListing2" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
 
+[node name="Tut1" type="Node2D" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+position = Vector2(-802, -20)
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/Tut1"]
+offset_left = 640.0
+offset_top = 99.0
+offset_right = 783.0
+offset_bottom = 175.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hajjo")
+text = "Click on a reagent to add it to the ritual"
+autowrap_mode = 2
+
+[node name="arrow" type="Sprite2D" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/Tut1"]
+texture_filter = 1
+position = Vector2(802, 90.0001)
+rotation = 0.966912
+scale = Vector2(2, 2)
+texture = ExtResource("8_7n5rd")
+
 [node name="Control" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="ClosenessToCreature" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "PLACEHOLDER"
 
 [node name="CreationPopup" parent="." instance=ExtResource("7_f7j84")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BottomRight" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-alignment = 2
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_top = -40
-theme_override_constants/margin_right = 83
-
-[node name="Control" type="Control" parent="HBoxContainer2/VBoxContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="GoalMan" parent="HBoxContainer2/VBoxContainer/MarginContainer/Control" instance=ExtResource("8_2u46p")]
+[node name="GoalMan" parent="CanvasLayer/BottomRight" instance=ExtResource("8_2u46p")]
 unique_name_in_owner = true
+position = Vector2(-132, -81.9999)
 
 [connection signal="pressed" from="HBoxContainer/Control/MarginContainer/VBoxContainer/CookButton" to="." method="_on_CookButton_pressed"]

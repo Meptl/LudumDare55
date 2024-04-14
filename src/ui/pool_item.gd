@@ -1,5 +1,6 @@
 extends TextureButton
 
+signal charge_start
 signal remove_requested(src)
 
 @onready var darken = $Darken
@@ -41,5 +42,7 @@ func _on_gui_input(event):
 		match event.button_index:
 			MOUSE_BUTTON_LEFT:
 				charging = event.pressed
+				if charging:
+					charge_start.emit()
 			MOUSE_BUTTON_RIGHT:
 				remove_requested.emit(self)
