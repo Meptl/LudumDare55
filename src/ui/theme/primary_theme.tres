@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://5tncb8wejg7q"]
+
+[ext_resource type="FontFile" uid="uid://c3iy6xu4rpn2h" path="res://src/ui/theme/necromancer.ttf" id="1_2nvlv"]
+
+[resource]
+default_font = ExtResource("1_2nvlv")
+default_font_size = 64

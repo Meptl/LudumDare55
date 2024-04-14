@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://e7uyc2dnivam"]
+
+[ext_resource type="Theme" uid="uid://5tncb8wejg7q" path="res://src/ui/theme/primary_theme.tres" id="1_kvqbj"]
+[ext_resource type="Script" path="res://src/ui/title_screen.gd" id="2_f3gvj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cr7uh"]
+font_size = 128
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kvqbj")
+script = ExtResource("2_f3gvj")
+game_scene = "res://src/ui/ui.tscn"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleMenu" type="VBoxContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/TitleMenu"]
+layout_mode = 2
+text = "Cat Summoner"
+label_settings = SubResource("LabelSettings_cr7uh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="CenterContainer/TitleMenu"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="CenterContainer/TitleMenu/Buttons"]
+layout_mode = 2
+text = "Play"
+
+[node name="Credits" type="Button" parent="CenterContainer/TitleMenu/Buttons"]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/TitleMenu/Buttons"]
+layout_mode = 2
+text = "Quit"
+
+[node name="CreditsMenu" type="VBoxContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Credits" type="Label" parent="CenterContainer/CreditsMenu"]
+layout_mode = 2
+text = "Developers:
+  - @Meptllc
+  - @Gametrodon
+  - @Slabity
+Assets used:
+  - Kenny
+  - necromancer.ttf "
+
+[node name="BackButton" type="Button" parent="CenterContainer/CreditsMenu"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/TitleMenu/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/TitleMenu/Buttons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CenterContainer/TitleMenu/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CenterContainer/CreditsMenu/BackButton" to="." method="_on_back_button_pressed"]
