@@ -1,5 +1,7 @@
 extends Camera2D
 
+signal cam_event
+
 @export var min_zoom = 0.6
 @export var max_zoom = 2.0
 
@@ -13,6 +15,7 @@ func _input(event):
 			if event.pressed:
 				dragging = true
 				drag_start = event.position
+				cam_event.emit()
 			else:
 				dragging = false
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:

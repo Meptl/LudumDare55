@@ -7,6 +7,7 @@
 
 [node name="SummonPool" type="HBoxContainer"]
 offset_right = 57.0
+mouse_filter = 2
 alignment = 1
 script = ExtResource("1_c76vf")
 pool_item_scene = ExtResource("4_dweox")

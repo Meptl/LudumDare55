@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0fcrcv0vpj8x"]
+
+[ext_resource type="Texture2D" uid="uid://crpvq1hppay4b" path="res://src/space/cam_tutorial/mouse_scroll.png" id="1_57f8q"]
+[ext_resource type="Script" path="res://src/space/cam_tutorial/cam_tutorial.gd" id="1_tfnt7"]
+[ext_resource type="Texture2D" uid="uid://b675deu8ialok" path="res://src/space/cam_tutorial/mouse_scroll_vertical.png" id="2_odoap"]
+
+[node name="CamTutorial" type="VBoxContainer"]
+modulate = Color(1, 1, 1, 0.65098)
+offset_right = 134.0
+offset_bottom = 50.0
+script = ExtResource("1_tfnt7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_57f8q")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Move camera"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("2_odoap")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "Zoom camera"

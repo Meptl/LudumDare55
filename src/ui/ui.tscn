@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=13 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
@@ -8,6 +8,39 @@
 [ext_resource type="Texture2D" uid="uid://cykr2yypk3hvw" path="res://src/ui/panel-border-016.png" id="4_bqp22"]
 [ext_resource type="PackedScene" uid="uid://dau0vtlkbgurg" path="res://src/ui/creation_popup.tscn" id="7_f7j84"]
 [ext_resource type="PackedScene" uid="uid://blgkg48ox8l5w" path="res://src/ui/goalman/goalman.tscn" id="8_2u46p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvq0u"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.329412, 0.294118, 0.290196, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5325"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.462745, 0.411765, 0.407843, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alhft"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.227451, 0.203922, 0.2, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skn5s"]
 bg_color = Color(0.329412, 0.294118, 0.290196, 1)
@@ -76,6 +109,14 @@ layout_mode = 2
 
 [node name="CookButton" type="Button" parent="HBoxContainer/Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvq0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g5325")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_alhft")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_alhft")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g5325")
 text = "Cook"
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]

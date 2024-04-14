@@ -27,7 +27,7 @@ func on_cooked(creature):
 	creation_popup.set_creature(creature)
 	creation_popup.popup()
 
-	if creature.name == goalman.goal.creature_name:
+	if goalman.goal != null and creature.name == goalman.goal.creature_name:
 		new_goal()
 
 
