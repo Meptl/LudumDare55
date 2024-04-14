@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=10 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://6upy6c1pqyqe" path="res://src/ui/summon_pool.tscn" id="3_u2il2"]
 [ext_resource type="Texture2D" uid="uid://cykr2yypk3hvw" path="res://src/ui/panel-border-016.png" id="4_bqp22"]
 [ext_resource type="PackedScene" uid="uid://dau0vtlkbgurg" path="res://src/ui/creation_popup.tscn" id="7_f7j84"]
+[ext_resource type="PackedScene" uid="uid://blgkg48ox8l5w" path="res://src/ui/goalman/goalman.tscn" id="8_2u46p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skn5s"]
 bg_color = Color(0.329412, 0.294118, 0.290196, 1)
@@ -156,5 +157,29 @@ text = "PLACEHOLDER"
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = 83
+
+[node name="Control" type="Control" parent="HBoxContainer2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="GoalMan" parent="HBoxContainer2/VBoxContainer/MarginContainer/Control" instance=ExtResource("8_2u46p")]
+unique_name_in_owner = true
 
 [connection signal="pressed" from="HBoxContainer/Control/MarginContainer/VBoxContainer/CookButton" to="." method="_on_CookButton_pressed"]

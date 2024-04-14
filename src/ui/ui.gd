@@ -5,6 +5,7 @@ extends Control
 @onready var space = %Space
 @onready var closeness_label = %ClosenessToCreature
 @onready var creation_popup = %CreationPopup
+@onready var goalman = %GoalMan
 
 
 func _ready():
@@ -12,10 +13,21 @@ func _ready():
 		child.selected.connect(summon_pool.add_reagent)
 	space.cooked.connect(on_cooked)
 
+	await get_tree().create_timer(4).timeout
+	new_goal()
+
+
+func new_goal():
+	var new_goal = space.goals[randi_range(0, space.goals.size() - 1)]
+	goalman.new_goal(new_goal)
+
 
 func on_cooked(creature):
 	creation_popup.set_creature(creature)
 	creation_popup.popup()
+
+	if creature.name == goalman.goal.creature_name:
+		new_goal()
 
 
 func _on_CookButton_pressed():
