@@ -240,27 +240,34 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Reagent"
 
-[node name="Spacer2" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer2" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
 text = "Cost"
 
-[node name="Spacer" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label3" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label3" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Path"
 
