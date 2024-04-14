@@ -46,8 +46,7 @@ func on_charge_start():
 func on_reagent_remove():
 	cook_button.disabled = summon_pool.reagents.size() == 0
 
-func start_the_music():
-	$Music._instantiate_playback()
+
 
 func on_reagent_add(reagent):
 	cook_button.disabled = false
