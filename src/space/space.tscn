@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhqwixi573bmv"]
+[gd_scene load_steps=19 format=3 uid="uid://dhqwixi573bmv"]
 
 [ext_resource type="Script" path="res://src/space/space.gd" id="1_8pl8e"]
 [ext_resource type="PackedScene" uid="uid://2l6i4u1pi6g6" path="res://src/goals/poo.tscn" id="2_164b8"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d0fcrcv0vpj8x" path="res://src/space/cam_tutorial/cam_tutorial.tscn" id="16_6sre0"]
 [ext_resource type="PackedScene" uid="uid://b05ilevx0mn1q" path="res://src/goals/eyebat.tscn" id="16_d6lda"]
 [ext_resource type="PackedScene" uid="uid://1dpiaakyf2m4" path="res://src/goals/ghost_cat.tscn" id="17_57hnd"]
+[ext_resource type="PackedScene" uid="uid://dalglnndf3of0" path="res://src/space/path_draw.tscn" id="17_oktvl"]
 [ext_resource type="PackedScene" uid="uid://b1mptotbh5hh8" path="res://src/goals/radioactive_act.tscn" id="18_b12pq"]
 [ext_resource type="PackedScene" uid="uid://dshoxd4we5ov8" path="res://src/goals/orange_cat.tscn" id="19_5vfcp"]
 
@@ -27,7 +28,6 @@ script = ExtResource("1_8pl8e")
 failed_creation = ExtResource("2_164b8")
 
 [node name="Background" type="TextureRect" parent="."]
-visible = false
 offset_left = -6055.0
 offset_top = -4209.0
 offset_right = 6034.0
@@ -81,5 +81,8 @@ offset_left = 52.0
 offset_top = -211.0
 offset_right = 186.0
 offset_bottom = -161.0
+
+[node name="PathDraw" parent="." instance=ExtResource("17_oktvl")]
+position = Vector2(0, 0)
 
 [connection signal="cam_event" from="Camera2D" to="CamTutorial" method="fade_out"]

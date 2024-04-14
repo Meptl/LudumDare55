@@ -23,8 +23,7 @@ func _ready():
 		tut.visible = false
 	tuts[0].visible = true
 
-	await get_tree().create_timer(4).timeout
-	new_goal()
+	cook_button.disabled = summon_pool.reagents.size() == 0
 
 
 func new_goal():
@@ -34,7 +33,6 @@ func new_goal():
 
 func on_charge_start():
 	if tuts[1].visible:
-		tuts[1].visible = false
 		tuts[2].visible = true
 
 
@@ -59,8 +57,12 @@ func on_cooked(creature, distance):
 
 func _on_CookButton_pressed():
 	cook_button.disabled = true
+	var tut_was_on = tuts[2].visible
 	if tuts[2].visible:
+		tuts[1].visible = false
 		tuts[2].visible = false
+
+	space.reset_head()
 
 	var spec = []
 	for reagent in summon_pool.reagents:
@@ -70,6 +72,8 @@ func _on_CookButton_pressed():
 	await space.follow_reagents(spec)
 
 	space.cook()
-	space.reset_head()
+
+	if tut_was_on:
+		new_goal()
 
 	cook_button.disabled = false

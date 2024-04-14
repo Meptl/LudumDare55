@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dalglnndf3of0"]
+
+[ext_resource type="Script" path="res://src/space/path_draw.gd" id="1_bmvbc"]
+
+[node name="PathDraw" type="Node2D"]
+position = Vector2(52, -211)
+script = ExtResource("1_bmvbc")
+color = Color(0.980392, 0.933333, 0.941176, 1)

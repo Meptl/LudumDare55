@@ -7,13 +7,14 @@ const COOK_THRESHOLD = 100
 @export var failed_creation: PackedScene
 
 @export var speed = 2.0
+@export var path_scale = 2.0
 @export var debug: Array[PackedScene]
 @onready var goals = $Goals.get_children()
 @onready var head = $Head
+@onready var path_draw = $PathDraw
 
 var sortedDictList
 
-var hist = []
 var failed_creature
 
 
@@ -26,12 +27,11 @@ func _ready():
 
 func reset_head():
 	head.position = Vector2(0, 0)
-	hist = []
+	path_draw.clear()
 
 
 func follow_reagents(reagents_spec):
-	hist.append(head.position)
-	print(reagents_spec)
+	path_draw.add_point(head.position)
 	for spec in reagents_spec:
 		var reagent = spec[0]
 		var amount = spec[1]
@@ -47,8 +47,8 @@ func follow_reagents(reagents_spec):
 		while traversed <= travel:
 			# TODO: Move the actual movement to _process.
 			traversed += 1
-			head.position = start_pos + path.sample_baked(traversed)
-			hist.append(head.position)
+			head.position = start_pos + path.sample_baked(traversed) * path_scale
+			path_draw.add_point(head.position)
 			queue_redraw()
 			await get_tree().physics_frame
 
@@ -66,11 +66,6 @@ func cook():
 		cooked.emit(failed_creature, null)
 	else:
 		cooked.emit(closest_node, closest_dist)
-
-
-func _draw():
-	for i in range(1, hist.size()):
-		draw_line(hist[i - 1], hist[i], Color.WHITE, 2)
 
 
 func calcGoalDistance(inputGoal):
@@ -92,7 +87,7 @@ func makeTileDistanceList():
 func sortTilesByDistance(inputDictonary):
 	var sorted_pairs = []
 	for key in inputDictonary.keys():
-		sorted_pairs.append([key, inputDictonary[key]])
+		sorted_pairs.add_point([key, inputDictonary[key]])
 	sorted_pairs.sort()
 	var sorted_dictionary = {}
 	for pair in sorted_pairs:
