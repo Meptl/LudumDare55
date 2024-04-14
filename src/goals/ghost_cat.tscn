@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://1dpiaakyf2m4"]
+
+[ext_resource type="PackedScene" uid="uid://dlatlabd0t4bq" path="res://src/goals/inherit-me.tscn" id="1_lce20"]
+[ext_resource type="Texture2D" uid="uid://bs4quxc0vx86s" path="res://src/goals/icons/ghost_0.png" id="2_i7y37"]
+
+[node name="GoalNode" instance=ExtResource("1_lce20")]
+creature_name = "ghost cat"
+description = "So spooky it hurts!"
+
+[node name="SummonIcon" parent="." index="1"]
+texture = ExtResource("2_i7y37")

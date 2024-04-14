@@ -1,12 +1,12 @@
 extends Node2D
 
-signal cooked(image, name)
+signal cooked(creature)
 
-@export var failed_creation_icon: Texture
+@export var failed_creation: PackedScene
 
 @export var speed = 2.0
-@export var pre: Array[PackedScene]
-@onready var goalList = [$RuneGreyTile001, $RuneGreyTile002, $RuneGreyTile003]
+@export var debug: Array[PackedScene]
+@onready var goals = $Goals.get_children()
 @onready var cam = $Camera2D
 @onready var head = $Head
 
@@ -15,9 +15,14 @@ var dragging = false
 var drag_start = Vector2.ZERO
 
 var hist = []
+var failed_creature
 
-# func _ready():
-# 	follow_reagents(pre)
+
+func _ready():
+	failed_creature = failed_creation.instantiate()
+	failed_creature.visible = false
+	add_child(failed_creature)
+	# follow_reagents(debug)
 
 
 func _input(event):
@@ -34,6 +39,11 @@ func _input(event):
 			var drag_distance = drag_start - drag_end
 			cam.position += drag_distance
 			drag_start = drag_end
+
+
+func reset_head():
+	head.position = Vector2(0, 0)
+	hist = []
 
 
 func follow_reagents(reagents_spec):
@@ -63,10 +73,9 @@ func follow_reagents(reagents_spec):
 func cook():
 	sortedDictList = sortTilesByDistance(makeTileDistanceList())
 	if getTopTile() < 30:
-		cooked.emit(failed_creation_icon, "poo")
+		cooked.emit(failed_creature)
 	else:
-		var creature = sortedDictList.keys()[0]
-		cooked.emit(creature.texture, creature.name)
+		cooked.emit(sortedDictList.keys()[0])
 
 
 func _draw():
@@ -81,7 +90,7 @@ func calcGoalDistance(inputGoal):
 #get a list of distances betweent he node and tiles
 func makeTileDistanceList():
 	var unsortedDictonary = {}
-	for element in goalList:
+	for element in goals:
 		var tempDis = calcGoalDistance(element)
 		if tempDis < 300:
 			unsortedDictonary[element] = tempDis

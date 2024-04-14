@@ -5,7 +5,7 @@ signal remove_requested(src)
 @onready var darken = $Darken
 @onready var percentage = $Percentage
 
-var charge_max = 3.0
+var charge_max = 1.2
 var charge = 0.0
 var charging = false
 

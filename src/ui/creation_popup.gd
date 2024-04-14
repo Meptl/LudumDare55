@@ -2,6 +2,7 @@ extends CenterContainer
 
 @onready var icon = %Icon
 @onready var words = %Words
+@onready var description = %Description
 
 
 func popup():
@@ -10,9 +11,10 @@ func popup():
 	# visible = false
 
 
-func set_creature(image, name):
-	icon.texture = image
-	words.text = name
+func set_creature(creature):
+	icon.texture = creature.summon_icon
+	words.text = creature.creature_name
+	description.text = creature.description
 
 
 func _input(event):

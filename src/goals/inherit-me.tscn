@@ -1,0 +1,30 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlatlabd0t4bq"]
+
+[ext_resource type="Script" path="res://src/goals/inherit-me.gd" id="1_ov2n8"]
+[ext_resource type="Texture2D" uid="uid://cgm2wfctrvi68" path="res://src/goals/circles/circle001.png" id="2_gwhif"]
+[ext_resource type="Texture2D" uid="uid://dvf8lu77w5d1q" path="res://src/goals/circles/circle002.png" id="3_e8kow"]
+[ext_resource type="Texture2D" uid="uid://blk1ttn14e116" path="res://src/goals/circles/circle003.png" id="4_83dxp"]
+[ext_resource type="Texture2D" uid="uid://irb4a1xw5uvb" path="res://src/goals/circles/circle004.png" id="5_dx8xx"]
+[ext_resource type="Texture2D" uid="uid://d4ig8v7bfacnx" path="res://src/goals/circles/circle005.png" id="6_oeyh6"]
+[ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="7_dj84l"]
+[ext_resource type="Shader" path="res://src/shaders/boxblur.gdshader" id="8_x1vil"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kiyhk"]
+shader = ExtResource("8_x1vil")
+shader_parameter/strength = 8.258
+shader_parameter/color = Color(1, 0.956863, 0.933333, 1)
+
+[node name="GoalNode" type="Node2D"]
+script = ExtResource("1_ov2n8")
+circles = Array[Texture]([ExtResource("2_gwhif"), ExtResource("3_e8kow"), ExtResource("4_83dxp"), ExtResource("5_dx8xx"), ExtResource("6_oeyh6")])
+
+[node name="Circle" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kiyhk")
+scale = Vector2(0.8, 0.8)
+
+[node name="Circle2" type="Sprite2D" parent="Circle"]
+editor_description = "Summon Icons should be at most 64x64"
+texture = ExtResource("2_gwhif")
+
+[node name="SummonIcon" type="Sprite2D" parent="."]
+texture = ExtResource("7_dj84l")

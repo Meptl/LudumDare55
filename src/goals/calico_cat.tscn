@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://benmd8fiwma6g"]
+
+[ext_resource type="PackedScene" uid="uid://dlatlabd0t4bq" path="res://src/goals/inherit-me.tscn" id="1_y3c6x"]
+[ext_resource type="Texture2D" uid="uid://ddwyxyura543f" path="res://src/goals/icons/calico_0.png" id="2_ra4gg"]
+
+[node name="GoalNode" instance=ExtResource("1_y3c6x")]
+creature_name = "calico cat"
+description = "Qui Mariam absolvisti
+Et latronem exaudisti,
+Mihi quoque spem dedisti."
+
+[node name="SummonIcon" parent="." index="1"]
+texture = ExtResource("2_ra4gg")

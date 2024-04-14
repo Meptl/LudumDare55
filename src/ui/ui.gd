@@ -13,8 +13,8 @@ func _ready():
 	space.cooked.connect(on_cooked)
 
 
-func on_cooked(im, name):
-	creation_popup.set_creature(im, name)
+func on_cooked(creature):
+	creation_popup.set_creature(creature)
 	creation_popup.popup()
 
 
@@ -26,4 +26,5 @@ func _on_CookButton_pressed():
 		spec.append([r, amount])
 	await space.follow_reagents(spec)
 	space.cook()
+	space.reset_head()
 	closeness_label.text = "Creature%: " + str(space.getTopTile())

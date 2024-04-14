@@ -1,3 +1,6 @@
+extends Node
+
+
 func read_json_file(file):
 	var json_as_text = FileAccess.get_file_as_string(file)
 	if json_as_text == "":

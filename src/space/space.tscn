@@ -1,17 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhqwixi573bmv"]
+[gd_scene load_steps=16 format=3 uid="uid://dhqwixi573bmv"]
 
 [ext_resource type="Script" path="res://src/space/space.gd" id="1_8pl8e"]
-[ext_resource type="Texture2D" uid="uid://d4krgmc41ul07" path="res://src/goals/poo.png" id="2_hr4qa"]
-[ext_resource type="PackedScene" uid="uid://bqcybo8lgi5mo" path="res://src/reagents/grass.tscn" id="2_qqwj6"]
+[ext_resource type="PackedScene" uid="uid://2l6i4u1pi6g6" path="res://src/goals/poo.tscn" id="2_164b8"]
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_wh33o"]
-[ext_resource type="PackedScene" uid="uid://c1glt7ryc0osd" path="res://src/reagents/poo.tscn" id="3_q204g"]
 [ext_resource type="Texture2D" uid="uid://cto8jynpsh58s" path="res://src/space/webb-dark.png" id="4_pdcjv"]
-[ext_resource type="Texture2D" uid="uid://es1436iag03t" path="res://src/reagents/runeGrey_tile_001.png" id="5_ag8hi"]
-[ext_resource type="Texture2D" uid="uid://ciqveqiu04bgu" path="res://src/reagents/runeGrey_tile_002.png" id="6_f6s8w"]
 [ext_resource type="Texture2D" uid="uid://pg5da6eylav2" path="res://src/space/summoning_circle.svg" id="7_28xyg"]
-[ext_resource type="Texture2D" uid="uid://cnxrop6c0mmxd" path="res://src/reagents/runeGrey_tile_003.png" id="7_f6ksk"]
 [ext_resource type="Shader" path="res://src/shaders/boxblur.gdshader" id="10_1hbuv"]
 [ext_resource type="Script" path="res://src/space/spin.gd" id="10_n7cbw"]
+[ext_resource type="PackedScene" uid="uid://b602flwxqsygy" path="res://src/goals/black_cat.tscn" id="13_y6ds2"]
+[ext_resource type="PackedScene" uid="uid://benmd8fiwma6g" path="res://src/goals/calico_cat.tscn" id="14_dmtbh"]
+[ext_resource type="PackedScene" uid="uid://bqheqlwr1x6cr" path="res://src/goals/brown_cat.tscn" id="15_vn0ma"]
+[ext_resource type="PackedScene" uid="uid://b05ilevx0mn1q" path="res://src/goals/eyebat.tscn" id="16_d6lda"]
+[ext_resource type="PackedScene" uid="uid://1dpiaakyf2m4" path="res://src/goals/ghost_cat.tscn" id="17_57hnd"]
+[ext_resource type="PackedScene" uid="uid://b1mptotbh5hh8" path="res://src/goals/radioactive_act.tscn" id="18_b12pq"]
+[ext_resource type="PackedScene" uid="uid://dshoxd4we5ov8" path="res://src/goals/orange_cat.tscn" id="19_5vfcp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ky7l"]
 shader = ExtResource("10_1hbuv")
@@ -20,8 +22,7 @@ shader_parameter/color = Color(1, 0.639216, 0.639216, 0.556863)
 
 [node name="Space" type="Node2D"]
 script = ExtResource("1_8pl8e")
-failed_creation_icon = ExtResource("2_hr4qa")
-pre = Array[PackedScene]([ExtResource("2_qqwj6"), ExtResource("3_q204g")])
+failed_creation = ExtResource("2_164b8")
 
 [node name="Background" type="TextureRect" parent="."]
 visible = false
@@ -40,18 +41,6 @@ texture = ExtResource("2_wh33o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="RuneGreyTile001" type="Sprite2D" parent="."]
-position = Vector2(-46, -248)
-texture = ExtResource("5_ag8hi")
-
-[node name="RuneGreyTile002" type="Sprite2D" parent="."]
-position = Vector2(-423, 83)
-texture = ExtResource("6_f6s8w")
-
-[node name="RuneGreyTile003" type="Sprite2D" parent="."]
-position = Vector2(295, 118)
-texture = ExtResource("7_f6ksk")
-
 [node name="SummoningCircle" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_28xyg")
@@ -60,3 +49,26 @@ script = ExtResource("10_n7cbw")
 [node name="SummoningCircleGlow" type="Sprite2D" parent="SummoningCircle"]
 material = SubResource("ShaderMaterial_3ky7l")
 texture = ExtResource("7_28xyg")
+
+[node name="Goals" type="Node2D" parent="."]
+
+[node name="GoalNode" parent="Goals" instance=ExtResource("13_y6ds2")]
+position = Vector2(250, 102)
+
+[node name="GoalNode3" parent="Goals" instance=ExtResource("14_dmtbh")]
+position = Vector2(242, 234)
+
+[node name="GoalNode2" parent="Goals" instance=ExtResource("15_vn0ma")]
+position = Vector2(116, 231)
+
+[node name="GoalNode4" parent="Goals" instance=ExtResource("16_d6lda")]
+position = Vector2(-242, 442)
+
+[node name="GoalNode5" parent="Goals" instance=ExtResource("17_57hnd")]
+position = Vector2(-372, 185)
+
+[node name="GoalNode6" parent="Goals" instance=ExtResource("18_b12pq")]
+position = Vector2(414, -249)
+
+[node name="GoalNode7" parent="Goals" instance=ExtResource("19_5vfcp")]
+position = Vector2(-149, -392)

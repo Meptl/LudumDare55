@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqheqlwr1x6cr"]
+
+[ext_resource type="PackedScene" uid="uid://dlatlabd0t4bq" path="res://src/goals/inherit-me.tscn" id="1_ppyam"]
+[ext_resource type="Texture2D" uid="uid://m0gw6b46yexe" path="res://src/goals/icons/brown_4.png" id="2_v5jnp"]
+
+[node name="GoalNode" instance=ExtResource("1_ppyam")]
+creature_name = "brown cat"
+description = "Scornful yet affectionate"
+
+[node name="SummonIcon" parent="." index="1"]
+texture = ExtResource("2_v5jnp")

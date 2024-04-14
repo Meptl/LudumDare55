@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dshoxd4we5ov8"]
+
+[ext_resource type="PackedScene" uid="uid://dlatlabd0t4bq" path="res://src/goals/inherit-me.tscn" id="1_qnwps"]
+[ext_resource type="Texture2D" uid="uid://c8trqhvl36hi7" path="res://src/goals/icons/orange_3.png" id="2_u6861"]
+
+[node name="GoalNode" instance=ExtResource("1_qnwps")]
+creature_name = "orange cat"
+description = "so hungry and yet so full"
+
+[node name="SummonIcon" parent="." index="1"]
+texture = ExtResource("2_u6861")
