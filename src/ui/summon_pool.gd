@@ -1,15 +1,16 @@
 extends HBoxContainer
 
 signal charge_start
+signal remove_requested
 
 @export var pool_item_scene: PackedScene
-@export var pre: Array[PackedScene]
+@export var debug: Array[PackedScene]
 
 var reagents = []
 
 
 func _ready():
-	for r in pre:
+	for r in debug:
 		add_reagent(r)
 
 
@@ -30,6 +31,7 @@ func on_charge_start():
 
 
 func remove_reagent(src):
+	remove_requested.emit()
 	var i = 0
 	for child in get_children():
 		if child == src:

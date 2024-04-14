@@ -1,48 +1,81 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm3i6u75idafx"]
+[gd_scene load_steps=7 format=3 uid="uid://cm3i6u75idafx"]
 
 [ext_resource type="Script" path="res://src/ui/reagent_listing.gd" id="1_dh6sa"]
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_4l33i"]
 [ext_resource type="PackedScene" uid="uid://bqcybo8lgi5mo" path="res://src/reagents/grass.tscn" id="2_h1mql"]
 
-[node name="ReagentListing" type="Button"]
-custom_minimum_size = Vector2(0, 100)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -827.0
-offset_bottom = -508.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0ynw"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.27451, 0.243137, 0.239216, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnrmw"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.227451, 0.203922, 0.2, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i25a6"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.462745, 0.411765, 0.407843, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="ReagentListing" type="PanelContainer"]
+offset_right = 269.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dh6sa")
+normal_style = SubResource("StyleBoxFlat_f0ynw")
+pressed_style = SubResource("StyleBoxFlat_bnrmw")
+hover_style = SubResource("StyleBoxFlat_i25a6")
 reagent = ExtResource("2_h1mql")
 
 [node name="ReagentListing" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 2
+theme_override_constants/separation = 7
 
 [node name="TextureRect" type="TextureRect" parent="ReagentListing"]
 layout_mode = 2
 texture = ExtResource("2_4l33i")
+stretch_mode = 3
 
 [node name="Name" type="Label" parent="ReagentListing"]
 layout_mode = 2
 text = "Foo"
 
-[node name="Spacer" type="Control" parent="ReagentListing"]
-layout_mode = 2
-size_flags_horizontal = 3
-
 [node name="Cost" type="Label" parent="ReagentListing"]
+visible = false
 layout_mode = 2
 text = "4"
 
 [node name="Control" type="Control" parent="ReagentListing"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
 
 [node name="Line2D" type="Line2D" parent="ReagentListing/Control"]
-position = Vector2(11, 35)
+scale = Vector2(0.3, 0.3)
 points = PackedVector2Array(0, 0, 50, 50, 100, 60)
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

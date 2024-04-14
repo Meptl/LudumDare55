@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var debug = true
+@export var debug = false
 @export var DEBUG_SIZE = 100
 
 @export var creature_name = "Creature"

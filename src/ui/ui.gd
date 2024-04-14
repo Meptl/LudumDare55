@@ -5,6 +5,7 @@ extends Control
 @onready var space = %Space
 @onready var creation_popup = %CreationPopup
 @onready var goalman = %GoalMan
+@onready var cook_button = %CookButton
 
 @onready var tuts = [%Tut1, %Tut2, %Tut3]
 
@@ -16,6 +17,7 @@ func _ready():
 		child.selected.connect(on_reagent_add)
 	space.cooked.connect(on_cooked)
 	summon_pool.charge_start.connect(on_charge_start)
+	summon_pool.remove_requested.connect(on_reagent_remove)
 
 	for tut in tuts:
 		tut.visible = false
@@ -36,7 +38,12 @@ func on_charge_start():
 		tuts[2].visible = true
 
 
+func on_reagent_remove():
+	cook_button.disabled = summon_pool.reagents.size() == 0
+
+
 func on_reagent_add(reagent):
+	cook_button.disabled = false
 	if tuts[0].visible:
 		tuts[0].visible = false
 		tuts[1].visible = true
@@ -51,6 +58,7 @@ func on_cooked(creature, distance):
 
 
 func _on_CookButton_pressed():
+	cook_button.disabled = true
 	if tuts[2].visible:
 		tuts[2].visible = false
 
@@ -60,5 +68,8 @@ func _on_CookButton_pressed():
 		var amount = reagent[1].amount()
 		spec.append([r, amount])
 	await space.follow_reagents(spec)
+
 	space.cook()
 	space.reset_head()
+
+	cook_button.disabled = false

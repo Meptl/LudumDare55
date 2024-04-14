@@ -1,4 +1,8 @@
-extends Button
+extends PanelContainer
+
+@export var normal_style: StyleBox
+@export var pressed_style: StyleBox
+@export var hover_style: StyleBox
 
 signal selected(reagent)
 
@@ -7,10 +11,13 @@ signal selected(reagent)
 @onready var icon_rect = $ReagentListing/TextureRect
 @onready var name_label = $ReagentListing/Name
 @onready var cost = $ReagentListing/Cost
+@onready var path_container = $ReagentListing/Control
 @onready var path = $ReagentListing/Control/Line2D
 
 
 func _ready():
+	self["theme_override_styles/panel"] = normal_style
+
 	var info = reagent.instantiate()
 	add_child(info)
 
@@ -20,9 +27,29 @@ func _ready():
 
 	# TODO: manage scale.
 	path.clear_points()
+	var max_size = Vector2.ZERO
 	for point in info.path.get_baked_points():
+		if abs(point.x) > max_size.x:
+			max_size.x = abs(point.x)
+		if abs(point.y) > max_size.y:
+			max_size.y = abs(point.y)
 		path.add_point(point)
 
+	path_container.custom_minimum_size = max_size * path.scale
 
-func _on_pressed():
-	selected.emit(reagent)
+
+func _on_gui_input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			self["theme_override_styles/panel"] = pressed_style
+			selected.emit(reagent)
+		else:
+			self["theme_override_styles/panel"] = normal_style
+
+
+func _on_mouse_entered():
+	self["theme_override_styles/panel"] = hover_style
+
+
+func _on_mouse_exited():
+	self["theme_override_styles/panel"] = normal_style

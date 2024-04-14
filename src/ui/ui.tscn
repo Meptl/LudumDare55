@@ -50,7 +50,7 @@ content_margin_left = 10.0
 content_margin_top = 8.0
 content_margin_right = 10.0
 content_margin_bottom = 8.0
-bg_color = Color(0.227451, 0.203922, 0.2, 1)
+bg_color = Color(0.168627, 0.14902, 0.14902, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -115,6 +115,7 @@ theme_override_constants/margin_bottom = 70
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control/MarginContainer"]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/separation = 0
 alignment = 2
 
 [node name="SummonPool" parent="HBoxContainer/Control/MarginContainer/VBoxContainer" instance=ExtResource("3_u2il2")]
@@ -169,7 +170,12 @@ rotation = 2.73842
 scale = Vector2(2, 2)
 texture = ExtResource("8_7n5rd")
 
+[node name="Spacer" type="Control" parent="HBoxContainer/Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 9)
+layout_mode = 2
+
 [node name="CookButton" type="Button" parent="HBoxContainer/Control/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/outline_size = 2
@@ -179,6 +185,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_g5325")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_alhft")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_alhft")
 theme_override_styles/focus = SubResource("StyleBoxFlat_g5325")
+disabled = true
 text = "Cook"
 
 [node name="Tut3" type="Control" parent="HBoxContainer/Control/MarginContainer/VBoxContainer"]
@@ -245,6 +252,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label2" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Cost"
 
@@ -260,14 +268,14 @@ text = "Path"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 5
 
 [node name="ReagentListing" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
-reagent = ExtResource("2_2lk2o")
 
 [node name="ReagentListing2" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
+reagent = ExtResource("2_2lk2o")
 
 [node name="Tut1" type="Node2D" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -288,10 +296,6 @@ position = Vector2(802, 90.0001)
 rotation = 0.966912
 scale = Vector2(2, 2)
 texture = ExtResource("8_7n5rd")
-
-[node name="Control" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
 
 [node name="CreationPopup" parent="." instance=ExtResource("7_f7j84")]
 unique_name_in_owner = true
