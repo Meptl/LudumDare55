@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=22 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
@@ -11,7 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://dau0vtlkbgurg" path="res://src/ui/creation_popup.tscn" id="7_f7j84"]
 [ext_resource type="PackedScene" uid="uid://blgkg48ox8l5w" path="res://src/ui/goalman/goalman.tscn" id="8_2u46p"]
 [ext_resource type="Texture2D" uid="uid://cdpil1a8uli2" path="res://src/ui/tutorial/arrow.png" id="8_7n5rd"]
-[ext_resource type="PackedScene" uid="uid://csq5hy273kfx5" path="res://src/reagents/witch.tscn" id="10_ib1nq"]
+[ext_resource type="PackedScene" path="res://src/reagents/witch.tscn" id="10_ib1nq"]
+[ext_resource type="PackedScene" uid="uid://cay7ujt4hayhw" path="res://src/reagents/fire.tscn" id="11_rtlup"]
+[ext_resource type="PackedScene" uid="uid://cm8aarklmwxd0" path="res://src/reagents/cabbage.tscn" id="12_xpio1"]
+[ext_resource type="PackedScene" uid="uid://b8vq68x41xxu8" path="res://src/reagents/catnip.tscn" id="13_i2k0t"]
+[ext_resource type="PackedScene" uid="uid://bwarq2ewdaxrl" path="res://src/reagents/snake.tscn" id="14_1gdea"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hajjo"]
 bg_color = Color(0.454902, 0.454902, 0.454902, 1)
@@ -272,22 +276,43 @@ size_flags_horizontal = 3
 layout_mode = 2
 text = "Path"
 
-[node name="ReagentTable" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ReagentTable" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="ReagentListing" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ReagentTable" instance=ExtResource("1_bowou")]
+[node name="ReagentListing5" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
+layout_mode = 2
+reagent = ExtResource("11_rtlup")
+
+[node name="ReagentListing4" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
 
-[node name="ReagentListing2" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ReagentTable" instance=ExtResource("1_bowou")]
+[node name="ReagentListing2" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
 reagent = ExtResource("2_2lk2o")
 
-[node name="ReagentListing3" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ReagentTable" instance=ExtResource("1_bowou")]
+[node name="ReagentListing3" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
 reagent = ExtResource("10_ib1nq")
+
+[node name="ReagentListing" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
+layout_mode = 2
+reagent = ExtResource("12_xpio1")
+
+[node name="ReagentListing6" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
+layout_mode = 2
+reagent = ExtResource("13_i2k0t")
+
+[node name="ReagentListing7" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
+layout_mode = 2
+reagent = ExtResource("14_1gdea")
 
 [node name="Tut1" type="Node2D" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true

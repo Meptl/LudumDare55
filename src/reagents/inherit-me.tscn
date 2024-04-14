@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvhlkfg6cqjtu"]
 
 [ext_resource type="Script" path="res://src/reagents/inherit-me.gd" id="1_78et4"]
-[ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_c5iw8"]
+[ext_resource type="Texture2D" uid="uid://b8y8j8fw0bp0c" path="res://src/reagents/defautlt_tile.png" id="2_ah0qu"]
 
 [sub_resource type="Curve2D" id="Curve2D_s48fh"]
 _data = {
@@ -20,5 +20,5 @@ position = Vector2(31, 25)
 curve = SubResource("Curve2D_s48fh")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-17, -35)
-texture = ExtResource("2_c5iw8")
+position = Vector2(-2, -1)
+texture = ExtResource("2_ah0qu")
