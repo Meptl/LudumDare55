@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1glt7ryc0osd"]
+
+[ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_vt8um"]
+[ext_resource type="Texture2D" uid="uid://5qi3wxtlc87g" path="res://src/reagents/poo.png" id="2_oj1hr"]
+
+[sub_resource type="Curve2D" id="Curve2D_4b3ly"]
+_data = {
+"points": PackedVector2Array(-12.8569, -85.3479, 12.8569, 85.3479, 0, 0, 46.796, 18.017, -46.796, -18.017, 64, 41, 0, 0, 0, 0, 108, 87)
+}
+point_count = 3
+
+[node name="Reagent" instance=ExtResource("1_vt8um")]
+reagent_name = "Poo"
+cost = 3
+
+[node name="Path2D" parent="." index="0"]
+curve = SubResource("Curve2D_4b3ly")
+
+[node name="Icon" parent="." index="1"]
+texture = ExtResource("2_oj1hr")

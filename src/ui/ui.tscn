@@ -1,10 +1,9 @@
-
-[gd_scene load_steps=24 format=3 uid="uid://cc7rcobagf62v"]
-
+[gd_scene load_steps=22 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
 [ext_resource type="PackedScene" uid="uid://dhqwixi573bmv" path="res://src/space/space.tscn" id="2_0lakp"]
+[ext_resource type="PackedScene" path="res://src/reagents/poo.tscn" id="2_2lk2o"]
 [ext_resource type="PackedScene" uid="uid://6upy6c1pqyqe" path="res://src/ui/summon_pool.tscn" id="3_u2il2"]
 [ext_resource type="Texture2D" uid="uid://co2bxlo7u0m18" path="res://src/ui/tutorial/mouse_left.png" id="4_4ur7c"]
 [ext_resource type="Texture2D" uid="uid://cykr2yypk3hvw" path="res://src/ui/panel-border-016.png" id="4_bqp22"]
@@ -12,15 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://dau0vtlkbgurg" path="res://src/ui/creation_popup.tscn" id="7_f7j84"]
 [ext_resource type="PackedScene" uid="uid://blgkg48ox8l5w" path="res://src/ui/goalman/goalman.tscn" id="8_2u46p"]
 [ext_resource type="Texture2D" uid="uid://cdpil1a8uli2" path="res://src/ui/tutorial/arrow.png" id="8_7n5rd"]
-
 [ext_resource type="PackedScene" path="res://src/reagents/witch.tscn" id="10_ib1nq"]
-[ext_resource type="PackedScene" uid="uid://bopee0dinlu8j" path="res://src/reagents/cabbage.tscn" id="12_xpio1"]
-[ext_resource type="PackedScene" uid="uid://b8vq68x41xxu8" path="res://src/reagents/catnip.tscn" id="13_i2k0t"]
-[ext_resource type="PackedScene" uid="uid://bwarq2ewdaxrl" path="res://src/reagents/snake.tscn" id="14_1gdea"]
-
+[ext_resource type="PackedScene" path="res://src/reagents/cabbage.tscn" id="12_xpio1"]
+[ext_resource type="PackedScene" path="res://src/reagents/catnip.tscn" id="13_i2k0t"]
+[ext_resource type="PackedScene" path="res://src/reagents/snake.tscn" id="14_1gdea"]
 [ext_resource type="Script" path="res://src/ui/tut_bounce.gd" id="14_7h0nf"]
-[ext_resource type="PackedScene" uid="uid://bd8tvwc50csn6" path="res://src/reagents/fire.tscn" id="15_jbro3"]
-[ext_resource type="AudioStream" uid="uid://m0l00qiuscwe" path="res://src/reagents/assets/LateNightRadio.mp3" id="18_yx08x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hajjo"]
 bg_color = Color(0.454902, 0.454902, 0.454902, 1)
@@ -301,6 +296,8 @@ theme_override_constants/separation = 5
 [node name="ReagentListing5" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
 
+[node name="ReagentListing4" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
+layout_mode = 2
 
 [node name="ReagentListing2" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
@@ -308,24 +305,19 @@ reagent = ExtResource("2_2lk2o")
 
 [node name="ReagentListing3" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
-
 reagent = ExtResource("10_ib1nq")
+
+[node name="ReagentListing" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
+layout_mode = 2
+reagent = ExtResource("12_xpio1")
 
 [node name="ReagentListing6" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
-reagent = ExtResource("10_eqd7r")
+reagent = ExtResource("13_i2k0t")
 
 [node name="ReagentListing7" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
-reagent = ExtResource("12_1p6cd")
-
-[node name="ReagentListing8" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
-layout_mode = 2
-reagent = ExtResource("13_2ypf5")
-
-[node name="ReagentListing8" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
-layout_mode = 2
-reagent = ExtResource("15_jbro3")
+reagent = ExtResource("14_1gdea")
 
 [node name="Control" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
@@ -376,10 +368,5 @@ grow_vertical = 0
 unique_name_in_owner = true
 position = Vector2(-151, -63.0001)
 scale = Vector2(4.71875, 4.71875)
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_yx08x")
-volume_db = -15.0
-autoplay = true
 
 [connection signal="pressed" from="HBoxContainer/Control/MarginContainer/VBoxContainer/CookButton" to="." method="_on_CookButton_pressed"]
