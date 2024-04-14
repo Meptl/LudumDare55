@@ -21,8 +21,12 @@ func set_creature(creature, distance = null):
 
 func grade(distance):
 	if distance == null:
-		return ["S", "A", "B", "C", "D", "F"][randi_range(0, 5)]
+		var out = ["A", "B", "C", "D", "F"][randi_range(0, 4)]
+		if randf() < 0.05:
+			out = "S"
+		return out
 
+	# Note that the summoning circle is visually 40px radius.
 	if distance < 5:
 		return "SSS"
 	elif distance < 10:
@@ -35,8 +39,6 @@ func grade(distance):
 		return "B"
 	elif distance < 80:
 		return "C"
-	elif distance < 100:
-		return "D"
 	else:
 		return "F"
 
