@@ -8,6 +8,8 @@ extends Control
 @onready var cook_button = %CookButton
 @onready var tuts = [%Tut1, %Tut2, %Tut3]
 
+var goalman_popped = false
+
 
 func _ready():
 	randomize()
@@ -23,9 +25,14 @@ func _ready():
 	tuts[0].visible = true
 
 	cook_button.disabled = summon_pool.reagents.size() == 0
+	goalman.position.y += 300
 
 
 func new_goal():
+	if not goalman_popped:
+		goalman_popped = true
+		var tween = get_tree().create_tween()
+		tween.tween_property(goalman, "position", goalman.position + Vector2(0, -300), 1.0)
 	var new_goal = space.goals[randi_range(0, space.goals.size() - 1)]
 	goalman.new_goal(new_goal)
 
