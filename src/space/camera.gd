@@ -7,7 +7,7 @@ signal cam_event
 
 var dragging = false
 var drag_start = Vector2.ZERO
-@export var target:NodePath
+@export var target: NodePath
 @onready var target_node = get_node(target)
 var follow_mode_on = false
 
@@ -34,17 +34,19 @@ func _input(event):
 			position += drag_distance
 			drag_start = drag_end
 
+
 func start_follow():
 	follow_mode_on = true
-	
+
 
 func end_follow():
 	follow_mode_on = false
-	
+
 
 func _process(delta):
-	if(follow_mode_on && target_node != null):
+	if follow_mode_on && target_node != null:
 		position = target_node.position
+
 
 func zoom_in():
 	var new_zoom = zoom + Vector2(0.1, 0.1)

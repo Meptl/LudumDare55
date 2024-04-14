@@ -54,6 +54,7 @@ func follow_reagents(reagents_spec):
 			await get_tree().physics_frame
 	$Camera2D.end_follow()
 
+
 func cook():
 	var closest_node = goals[0]
 	var closest_dist = goals[0].position.distance_to(head.position)

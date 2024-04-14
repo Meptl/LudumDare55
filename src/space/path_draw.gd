@@ -23,4 +23,3 @@ func _draw():
 	for i in range(1, hist.size()):
 		var width = max_width - (max_width - min_width) * abs(middle - i) / middle
 		draw_line(hist[i - 1], hist[i], color, width)
-	
