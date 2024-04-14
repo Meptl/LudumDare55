@@ -1,9 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=32 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
 [ext_resource type="PackedScene" uid="uid://dhqwixi573bmv" path="res://src/space/space.tscn" id="2_0lakp"]
-[ext_resource type="PackedScene" path="res://src/reagents/poo.tscn" id="2_2lk2o"]
 [ext_resource type="PackedScene" uid="uid://6upy6c1pqyqe" path="res://src/ui/summon_pool.tscn" id="3_u2il2"]
 [ext_resource type="Texture2D" uid="uid://co2bxlo7u0m18" path="res://src/ui/tutorial/mouse_left.png" id="4_4ur7c"]
 [ext_resource type="Texture2D" uid="uid://cykr2yypk3hvw" path="res://src/ui/panel-border-016.png" id="4_bqp22"]
@@ -11,10 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dau0vtlkbgurg" path="res://src/ui/creation_popup.tscn" id="7_f7j84"]
 [ext_resource type="PackedScene" uid="uid://blgkg48ox8l5w" path="res://src/ui/goalman/goalman.tscn" id="8_2u46p"]
 [ext_resource type="Texture2D" uid="uid://cdpil1a8uli2" path="res://src/ui/tutorial/arrow.png" id="8_7n5rd"]
-[ext_resource type="PackedScene" path="res://src/reagents/witch.tscn" id="10_ib1nq"]
-[ext_resource type="PackedScene" path="res://src/reagents/cabbage.tscn" id="12_xpio1"]
-[ext_resource type="PackedScene" path="res://src/reagents/catnip.tscn" id="13_i2k0t"]
-[ext_resource type="PackedScene" path="res://src/reagents/snake.tscn" id="14_1gdea"]
+[ext_resource type="PackedScene" uid="uid://csq5hy273kfx5" path="res://src/reagents/witch.tscn" id="10_ib1nq"]
+[ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="10_yt445"]
 [ext_resource type="Script" path="res://src/ui/tut_bounce.gd" id="14_7h0nf"]
 [ext_resource type="AudioStream" uid="uid://m0l00qiuscwe" path="res://src/reagents/assets/LateNightRadio.mp3" id="17_ee3gv"]
 
@@ -64,6 +61,94 @@ corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skn5s"]
 bg_color = Color(0.329412, 0.294118, 0.290196, 1)
+
+[sub_resource type="Curve2D" id="Curve2D_4b3ly"]
+_data = {
+"points": PackedVector2Array(-12.8569, -85.3479, 12.8569, 85.3479, 0, 0, 46.796, 18.017, -46.796, -18.017, 64, 41, 0, 0, 0, 0, 108, 87)
+}
+point_count = 3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sw3mc"]
+
+[sub_resource type="PackedScene" id="PackedScene_an5b7"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Reagent", "reagent_name", "cost", "Path2D", "curve", "Icon", "texture"),
+"node_count": 3,
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 2, 1, 1, 2, 2, 0, 1073741824, -1, 2147483647, 262147, -1, 1, 4, 3, 0, 1073741825, -1, 2147483647, 524293, -1, 1, 6, 4, 0),
+"variants": [ExtResource("10_yt445"), "Poo", 3, SubResource("Curve2D_4b3ly"), SubResource("CompressedTexture2D_sw3mc")],
+"version": 3
+}
+
+[sub_resource type="Curve2D" id="Curve2D_qho3d"]
+_data = {
+"points": PackedVector2Array(-6.17513, -35.4574, 6.17513, 35.4574, 0, 0, -1.07007, -41.2477, 1.07007, 41.2477, 3, 65, 0, 0, 0, 0, 7, 124)
+}
+point_count = 3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vfnme"]
+
+[sub_resource type="PackedScene" id="PackedScene_bk800"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Reagent", "reagent_name", "Path2D", "curve", "Icon", "texture"),
+"node_count": 3,
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 1, 1, 1, 0, 1073741824, -1, 2147483647, 262146, -1, 1, 3, 2, 0, 1073741825, -1, 2147483647, 524292, -1, 1, 5, 3, 0),
+"variants": [ExtResource("10_yt445"), "Cabbage", SubResource("Curve2D_qho3d"), SubResource("CompressedTexture2D_vfnme")],
+"version": 3
+}
+
+[sub_resource type="Curve2D" id="Curve2D_4io61"]
+_data = {
+"points": PackedVector2Array(66.3665, -0.970398, -66.3665, 0.970398, 0, 0, 48.6642, 0.0760322, -48.6642, -0.0760322, -94, 4, 0, 0, 0, 0, -180, 3)
+}
+point_count = 3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0n8nw"]
+
+[sub_resource type="PackedScene" id="PackedScene_slsak"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Reagent", "reagent_name", "Path2D", "curve", "Icon", "texture"),
+"node_count": 3,
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 1, 1, 1, 0, 1073741824, -1, 2147483647, 262146, -1, 1, 3, 2, 0, 1073741825, -1, 2147483647, 524292, -1, 1, 5, 3, 0),
+"variants": [ExtResource("10_yt445"), "Cat Nip", SubResource("Curve2D_4io61"), SubResource("CompressedTexture2D_0n8nw")],
+"version": 3
+}
+
+[sub_resource type="Curve2D" id="Curve2D_cney0"]
+_data = {
+"points": PackedVector2Array(-6.17513, -35.4574, 6.17513, 35.4574, 0, 0, -30.1621, 1.28726, 30.1621, -1.28726, 59, 1, 0, 0, 0, 0, 130, 7, 0, 0, 0, 0, 160, 6)
+}
+point_count = 4
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_53cjn"]
+
+[sub_resource type="PackedScene" id="PackedScene_o4r3v"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Reagent", "reagent_name", "Path2D", "curve", "Icon", "texture"),
+"node_count": 3,
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 1, 1, 1, 0, 1073741824, -1, 2147483647, 262146, -1, 1, 3, 2, 0, 1073741825, -1, 2147483647, 524292, -1, 1, 5, 3, 0),
+"variants": [ExtResource("10_yt445"), "Snake", SubResource("Curve2D_cney0"), SubResource("CompressedTexture2D_53cjn")],
+"version": 3
+}
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -302,7 +387,7 @@ layout_mode = 2
 
 [node name="ReagentListing2" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
-reagent = ExtResource("2_2lk2o")
+reagent = SubResource("PackedScene_an5b7")
 
 [node name="ReagentListing3" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
@@ -310,15 +395,15 @@ reagent = ExtResource("10_ib1nq")
 
 [node name="ReagentListing" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
-reagent = ExtResource("12_xpio1")
+reagent = SubResource("PackedScene_bk800")
 
 [node name="ReagentListing6" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
-reagent = ExtResource("13_i2k0t")
+reagent = SubResource("PackedScene_slsak")
 
 [node name="ReagentListing7" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
-reagent = ExtResource("14_1gdea")
+reagent = SubResource("PackedScene_o4r3v")
 
 [node name="Control" type="Control" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
