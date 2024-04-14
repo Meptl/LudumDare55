@@ -4,8 +4,6 @@ signal cooked(creature, distance)
 
 const COOK_THRESHOLD = 100
 
-@export var failed_creation: PackedScene
-
 @export var speed = 2.0
 @export var path_scale = 2.0
 @export var debug: Array[PackedScene]
@@ -15,13 +13,20 @@ const COOK_THRESHOLD = 100
 
 var sortedDictList
 
-var failed_creature
+@onready var failed_creations: Array[PackedScene] = [
+	preload("res://src/goals/poo.tscn"),
+	preload("res://src/goals/stick.tscn"),
+	preload("res://src/goals/rock.tscn")
+]
+var failed_creatures = []
 
 
 func _ready():
-	failed_creature = failed_creation.instantiate()
-	failed_creature.visible = false
-	add_child(failed_creature)
+	for scene in failed_creations:
+		var node = scene.instantiate()
+		node.visible = false
+		failed_creatures.append(node)
+		add_child(node)
 	# follow_reagents(debug)
 
 
@@ -65,7 +70,7 @@ func cook():
 			closest_dist = dist
 
 	if closest_dist > COOK_THRESHOLD:
-		cooked.emit(failed_creature, null)
+		cooked.emit(failed_creatures[randi() % failed_creatures.size()], null)
 	else:
 		cooked.emit(closest_node, closest_dist)
 

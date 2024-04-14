@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://brwertex5b51q"]
+
+[ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_eyisf"]
+[ext_resource type="Texture2D" uid="uid://ryl6sw2qh6hm" path="res://src/reagents/assets/bottle.png" id="2_ofbws"]
+
+[node name="Reagent" instance=ExtResource("1_eyisf")]
+reagent_name = "Bottle"
+
+[node name="Icon" parent="." index="1"]
+texture = ExtResource("2_ofbws")

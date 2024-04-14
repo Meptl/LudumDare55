@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b178bftf3potg"]
+
+[ext_resource type="PackedScene" uid="uid://dlatlabd0t4bq" path="res://src/goals/inherit-me.tscn" id="1_dpbky"]
+[ext_resource type="Texture2D" uid="uid://b3mlgqnucadog" path="res://src/goals/icons/rock.png" id="2_uv4ru"]
+
+[node name="GoalNode" instance=ExtResource("1_dpbky")]
+creature_name = "Rock"
+description = "The pioneers used to ride these babies for miles."
+
+[node name="SummonIcon" parent="." index="1"]
+texture = ExtResource("2_uv4ru")
