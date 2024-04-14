@@ -50,7 +50,7 @@ func on_cooked(creature, distance):
 	creation_popup.set_creature(creature, distance)
 	creation_popup.popup()
 
-	if goalman.goal != null and creature.name == goalman.goal.creature_name:
+	if goalman.goal != null and creature.creature_name == goalman.goal.creature_name:
 		new_goal()
 
 

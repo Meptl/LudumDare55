@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://dhqwixi573bmv"]
 
 [ext_resource type="Script" path="res://src/space/space.gd" id="1_8pl8e"]
-[ext_resource type="PackedScene" path="res://src/goals/poo.tscn" id="2_164b8"]
+[ext_resource type="PackedScene" uid="uid://2l6i4u1pi6g6" path="res://src/goals/poo.tscn" id="2_164b8"]
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_wh33o"]
 [ext_resource type="Texture2D" uid="uid://cto8jynpsh58s" path="res://src/space/webb-dark.png" id="4_pdcjv"]
 [ext_resource type="Script" path="res://src/space/camera.gd" id="5_mwdfa"]
@@ -10,13 +10,13 @@
 [ext_resource type="Script" path="res://src/space/spin.gd" id="10_n7cbw"]
 [ext_resource type="PackedScene" uid="uid://b602flwxqsygy" path="res://src/goals/black_cat.tscn" id="13_y6ds2"]
 [ext_resource type="PackedScene" uid="uid://benmd8fiwma6g" path="res://src/goals/calico_cat.tscn" id="14_dmtbh"]
-[ext_resource type="PackedScene" path="res://src/goals/brown_cat.tscn" id="15_vn0ma"]
+[ext_resource type="PackedScene" uid="uid://bqheqlwr1x6cr" path="res://src/goals/brown_cat.tscn" id="15_vn0ma"]
 [ext_resource type="PackedScene" uid="uid://d0fcrcv0vpj8x" path="res://src/space/cam_tutorial/cam_tutorial.tscn" id="16_6sre0"]
-[ext_resource type="PackedScene" path="res://src/goals/eyebat.tscn" id="16_d6lda"]
+[ext_resource type="PackedScene" uid="uid://b05ilevx0mn1q" path="res://src/goals/eyebat.tscn" id="16_d6lda"]
 [ext_resource type="PackedScene" uid="uid://1dpiaakyf2m4" path="res://src/goals/ghost_cat.tscn" id="17_57hnd"]
 [ext_resource type="PackedScene" uid="uid://dalglnndf3of0" path="res://src/space/path_draw.tscn" id="17_oktvl"]
-[ext_resource type="PackedScene" path="res://src/goals/radioactive_act.tscn" id="18_b12pq"]
-[ext_resource type="PackedScene" path="res://src/goals/orange_cat.tscn" id="19_5vfcp"]
+[ext_resource type="PackedScene" uid="uid://b1mptotbh5hh8" path="res://src/goals/radioactive_act.tscn" id="18_b12pq"]
+[ext_resource type="PackedScene" uid="uid://dshoxd4we5ov8" path="res://src/goals/orange_cat.tscn" id="19_5vfcp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ky7l"]
 shader = ExtResource("10_1hbuv")
