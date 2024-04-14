@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cm3i6u75idafx"]
+[gd_scene load_steps=9 format=3 uid="uid://cm3i6u75idafx"]
 
 [ext_resource type="Script" path="res://src/ui/reagent_listing.gd" id="1_dh6sa"]
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_4l33i"]
@@ -40,6 +40,9 @@ corner_radius_bottom_left = 12
 [sub_resource type="Curve" id="Curve_djshv"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.395604), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_82gdn"]
+colors = PackedColorArray(1, 1, 1, 1, 0.195312, 0.195312, 0.195312, 1)
 
 [node name="ReagentListing" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 64)
@@ -88,6 +91,7 @@ mouse_filter = 2
 scale = Vector2(0.3, 0.3)
 points = PackedVector2Array(0, 0, 50, 50, 100, 60)
 width_curve = SubResource("Curve_djshv")
+gradient = SubResource("Gradient_82gdn")
 begin_cap_mode = 2
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
