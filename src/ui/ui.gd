@@ -80,7 +80,6 @@ func on_reagent_remove():
 	cook_button.disabled = summon_pool.reagents.size() == 0
 
 
-
 func on_reagent_add(reagent):
 	cook_button.disabled = false
 	if tuts[0].visible:
