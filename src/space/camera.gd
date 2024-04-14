@@ -31,7 +31,9 @@ func _input(event):
 		if dragging:
 			var drag_end = event.position
 			var drag_distance = drag_start - drag_end
-			position += drag_distance
+			var percentage = (zoom.x - min_zoom) / (max_zoom - min_zoom)
+			var drag_percent = 1.0 - (percentage * 0.5 + 0.3)
+			position += drag_distance * Vector2(drag_percent, drag_percent)
 			drag_start = drag_end
 
 

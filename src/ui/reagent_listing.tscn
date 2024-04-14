@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cm3i6u75idafx"]
 
 [ext_resource type="Script" path="res://src/ui/reagent_listing.gd" id="1_dh6sa"]
-[ext_resource type="PackedScene" uid="uid://bqcybo8lgi5mo" path="res://src/reagents/grass.tscn" id="2_h1mql"]
-[ext_resource type="Texture2D" uid="uid://b8y8j8fw0bp0c" path="res://src/reagents/defautlt_tile.png" id="3_pa5n8"]
+[ext_resource type="PackedScene" uid="uid://bqcybo8lgi5mo" path="res://src/reagents/00inky_cap.tscn" id="2_e5x7k"]
+[ext_resource type="Texture2D" uid="uid://b8y8j8fw0bp0c" path="res://src/reagents/assets/placeholder.png" id="3_jo5jg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0ynw"]
 content_margin_left = 10.0
@@ -55,7 +55,7 @@ script = ExtResource("1_dh6sa")
 normal_style = SubResource("StyleBoxFlat_f0ynw")
 pressed_style = SubResource("StyleBoxFlat_bnrmw")
 hover_style = SubResource("StyleBoxFlat_i25a6")
-reagent = ExtResource("2_h1mql")
+reagent = ExtResource("2_e5x7k")
 
 [node name="ReagentListing" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -64,7 +64,7 @@ theme_override_constants/separation = 7
 [node name="TextureRect" type="TextureRect" parent="ReagentListing"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-texture = ExtResource("3_pa5n8")
+texture = ExtResource("3_jo5jg")
 stretch_mode = 3
 
 [node name="Name" type="Label" parent="ReagentListing"]
@@ -88,6 +88,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 
 [node name="Line2D" type="Line2D" parent="ReagentListing/Control"]
+position = Vector2(15, 20)
 scale = Vector2(0.3, 0.3)
 points = PackedVector2Array(0, 0, 50, 50, 100, 60)
 width_curve = SubResource("Curve_djshv")

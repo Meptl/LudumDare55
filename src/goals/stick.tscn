@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://djq8agficvb45"]
+
+[ext_resource type="PackedScene" uid="uid://dlatlabd0t4bq" path="res://src/goals/inherit-me.tscn" id="1_7mren"]
+[ext_resource type="Texture2D" uid="uid://c3kfv0iu3awes" path="res://src/goals/icons/stick.png" id="2_0vqg8"]
+
+[node name="GoalNode" instance=ExtResource("1_7mren")]
+creature_name = "Stick"
+description = "Can be combined to build a table."
+
+[node name="SummonIcon" parent="." index="1"]
+texture = ExtResource("2_0vqg8")

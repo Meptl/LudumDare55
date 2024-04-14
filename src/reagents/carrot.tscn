@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bopee0dinlu8j"]
+
+[ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_wgdsj"]
+[ext_resource type="Texture2D" uid="uid://tnu2vfhb2srb" path="res://src/reagents/assets/carrot.png" id="2_eyutg"]
+
+[sub_resource type="Curve2D" id="Curve2D_qho3d"]
+_data = {
+"points": PackedVector2Array(-6.17513, -35.4574, 6.17513, 35.4574, 0, 0, -1.07007, -41.2477, 1.07007, 41.2477, 17, 78, 0, 0, 0, 0, -17, 160)
+}
+point_count = 3
+
+[node name="Reagent" instance=ExtResource("1_wgdsj")]
+reagent_name = "Carrot"
+
+[node name="Path2D" parent="." index="0"]
+curve = SubResource("Curve2D_qho3d")
+
+[node name="Icon" parent="." index="1"]
+texture = ExtResource("2_eyutg")

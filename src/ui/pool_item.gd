@@ -33,6 +33,8 @@ func _physics_process(delta):
 	darken.material.set_shader_parameter(
 		"EdgePosition", clampf((charge_max - charge) / charge_max, 0.0, 1.0)
 	)
+	if uncharging and charge <= 0.0:
+		remove_requested.emit(self)
 
 
 func set_icon(i):
@@ -47,6 +49,4 @@ func _on_gui_input(event):
 				if charging:
 					charge_start.emit()
 			MOUSE_BUTTON_RIGHT:
-				if event.pressed && charge <= 0.0:
-					remove_requested.emit(self)
 				uncharging = event.pressed
