@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=21 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
@@ -12,8 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://blgkg48ox8l5w" path="res://src/ui/goalman/goalman.tscn" id="8_2u46p"]
 [ext_resource type="Texture2D" uid="uid://cdpil1a8uli2" path="res://src/ui/tutorial/arrow.png" id="8_7n5rd"]
 [ext_resource type="PackedScene" uid="uid://csq5hy273kfx5" path="res://src/reagents/witch.tscn" id="10_ib1nq"]
-[ext_resource type="PackedScene" path="res://src/reagents/fire.tscn" id="11_rtlup"]
-[ext_resource type="PackedScene" path="res://src/reagents/cabbage.tscn" id="12_xpio1"]
+[ext_resource type="PackedScene" uid="uid://bopee0dinlu8j" path="res://src/reagents/cabbage.tscn" id="12_xpio1"]
 [ext_resource type="PackedScene" path="res://src/reagents/catnip.tscn" id="13_i2k0t"]
 [ext_resource type="PackedScene" path="res://src/reagents/snake.tscn" id="14_1gdea"]
 
@@ -249,7 +248,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 25
+theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
@@ -289,7 +288,6 @@ theme_override_constants/separation = 5
 
 [node name="ReagentListing5" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
-reagent = ExtResource("11_rtlup")
 
 [node name="ReagentListing4" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2

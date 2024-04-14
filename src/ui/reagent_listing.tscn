@@ -42,7 +42,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.395604), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_82gdn"]
-colors = PackedColorArray(1, 1, 1, 1, 0.195312, 0.195312, 0.195312, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.496094, 0.496094, 0.496094, 1)
 
 [node name="ReagentListing" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 64)
@@ -82,7 +82,7 @@ size_flags_horizontal = 3
 mouse_filter = 2
 
 [node name="Control" type="Control" parent="ReagentListing"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(100, 48)
 layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 2

@@ -59,3 +59,4 @@ mine={
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.054902, 0.054902, 0.054902, 1)

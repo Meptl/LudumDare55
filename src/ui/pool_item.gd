@@ -46,7 +46,6 @@ func _on_gui_input(event):
 				charging = event.pressed
 				if charging:
 					charge_start.emit()
-				print(charging)
 			MOUSE_BUTTON_RIGHT:
 				if event.pressed && charge <= 0.0:
 					remove_requested.emit(self)

@@ -27,15 +27,8 @@ func _ready():
 
 	# TODO: manage scale.
 	path.clear_points()
-	var max_size = Vector2.ZERO
 	for point in info.path.get_baked_points():
-		if abs(point.x) > max_size.x:
-			max_size.x = abs(point.x)
-		if abs(point.y) > max_size.y:
-			max_size.y = abs(point.y)
 		path.add_point(point)
-
-	path_container.custom_minimum_size = max_size * path.scale
 
 
 func _on_gui_input(event):

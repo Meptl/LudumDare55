@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cay7ujt4hayhw"]
+[gd_scene load_steps=3 format=3 uid="uid://bd8tvwc50csn6"]
 
 [ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_f7os1"]
 
