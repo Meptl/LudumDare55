@@ -204,6 +204,7 @@ size_flags_horizontal = 4
 [node name="Node2D" type="Node2D" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut3"]
 script = ExtResource("14_7h0nf")
 dir = Vector2(-1, 0)
+size = 3.0
 
 [node name="Label" type="Label" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut3/Node2D"]
 offset_left = 70.0
