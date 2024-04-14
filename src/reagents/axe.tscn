@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bflq04fgaa5n7"]
+
+[ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_7mlmo"]
+[ext_resource type="Texture2D" uid="uid://demobfat676il" path="res://src/reagents/assets/axe.png" id="2_ueiif"]
+
+[sub_resource type="Curve2D" id="Curve2D_5j51r"]
+_data = {
+"points": PackedVector2Array(13.586, -64.8888, -13.586, 64.8888, 0, 0, 34.1868, -25.0416, -34.1868, 25.0416, -94, -66, 0, 0, 0, 0, -131, 62, 0, 0, 0, 0, -164, 46, 0, 0, 0, 0, -193, -82)
+}
+point_count = 5
+
+[node name="Reagent" instance=ExtResource("1_7mlmo")]
+reagent_name = "Axe"
+
+[node name="Path2D" parent="." index="0"]
+curve = SubResource("Curve2D_5j51r")
+
+[node name="Icon" parent="." index="1"]
+texture = ExtResource("2_ueiif")

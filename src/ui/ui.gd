@@ -1,5 +1,8 @@
 extends Control
 
+const reagents_path = "res://src/reagents/"
+const reagent_listing = preload("res://src/ui/reagent_listing.tscn")
+
 @onready var reagent_table = %ReagentTable
 @onready var summon_pool = %SummonPool
 @onready var space = %Space
@@ -13,9 +16,7 @@ var goalman_popped = false
 
 func _ready():
 	randomize()
-	for child in reagent_table.get_children():
-		child.selected.connect(summon_pool.add_reagent)
-		child.selected.connect(on_reagent_add)
+	init_reagent_table()
 	space.cooked.connect(on_cooked)
 	summon_pool.charge_start.connect(on_charge_start)
 	summon_pool.remove_requested.connect(on_reagent_remove)
@@ -26,6 +27,38 @@ func _ready():
 
 	cook_button.disabled = summon_pool.reagents.size() == 0
 	goalman.position.y += 300
+
+
+func init_reagent_table():
+	for child in reagent_table.get_children():
+		child.queue_free()
+
+	var dir = DirAccess.open(reagents_path)
+	var file_names = []
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if (
+				not dir.current_is_dir()
+				and file_name.ends_with(".tscn")
+				and file_name != "inherit-me.tscn"
+			):
+				file_names.append(file_name)
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access the path.")
+
+	file_names.sort()
+
+	for file_name in file_names:
+		var node = reagent_listing.instantiate()
+		node.reagent = load(reagents_path + file_name)
+		reagent_table.add_child(node)
+
+	for child in reagent_table.get_children():
+		child.selected.connect(summon_pool.add_reagent)
+		child.selected.connect(on_reagent_add)
 
 
 func new_goal():

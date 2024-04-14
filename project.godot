@@ -21,7 +21,7 @@ QuickQuit="*res://src/autoloads/quick_quit.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
