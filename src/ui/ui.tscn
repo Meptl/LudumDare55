@@ -373,5 +373,6 @@ scale = Vector2(4.71875, 4.71875)
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_ee3gv")
 volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="HBoxContainer/Control/MarginContainer/VBoxContainer/CookButton" to="." method="_on_CookButton_pressed"]
