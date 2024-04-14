@@ -19,8 +19,8 @@ func add_reagent(reagent):
 	add_child(info)
 
 	var pool_item = pool_item_scene.instantiate()
-	pool_item.texture_normal = info.icon
 	add_child(pool_item)
+	pool_item.set_icon(info.icon)
 	pool_item.remove_requested.connect(remove_reagent)
 	pool_item.charge_start.connect(on_charge_start)
 	reagents.append([reagent, pool_item])

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ypb8w1l42hcl"]
+[gd_scene load_steps=6 format=3 uid="uid://ypb8w1l42hcl"]
 
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="1_hn7fm"]
+[ext_resource type="Texture2D" uid="uid://dn3gyj1jvgt5r" path="res://src/ui/reagent_backdrop.png" id="1_owod1"]
 [ext_resource type="Script" path="res://src/ui/pool_item.gd" id="2_oyse8"]
 [ext_resource type="Shader" uid="uid://b3p1bmjnvaoau" path="res://src/ui/pool_item.tres" id="3_m4fha"]
 
@@ -10,7 +11,6 @@ shader = ExtResource("3_m4fha")
 shader_parameter/EdgePosition = 1.0
 
 [node name="PoolItem" type="TextureButton"]
-custom_minimum_size = Vector2(0, 64)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -22,9 +22,25 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_hn7fm")
+texture_normal = ExtResource("1_owod1")
 stretch_mode = 3
 script = ExtResource("2_oyse8")
+
+[node name="IconRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hn7fm")
+expand_mode = 2
 
 [node name="Darken" type="Panel" parent="."]
 material = SubResource("ShaderMaterial_mp573")
