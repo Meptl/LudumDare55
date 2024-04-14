@@ -34,21 +34,35 @@ func init_reagent_table():
 	for child in reagent_table.get_children():
 		child.queue_free()
 
-	var dir = DirAccess.open(reagents_path)
 	var file_names = []
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if (
-				not dir.current_is_dir()
-				and file_name.ends_with(".tscn")
-				and file_name != "inherit-me.tscn"
-			):
-				file_names.append(file_name)
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path.")
+	# File listing is hard in exported project. Hard coding for now.
+	file_names = [
+		"00inky_cap.tscn",
+		"axe.tscn",
+		"bottle.tscn",
+		"carrot.tscn",
+		"log.tscn",
+		"m-enoki.tscn",
+		"m-fire.tscn",
+		"morchella.tscn",
+		"pumpkin.tscn",
+		"witch.tscn",
+		"x-shiitake.tscn",
+	]
+	# var dir = DirAccess.open(reagents_path)
+	# if dir:
+	# 	dir.list_dir_begin()
+	# 	var file_name = dir.get_next()
+	# 	while file_name != "":
+	# 		if (
+	# 			not dir.current_is_dir()
+	# 			and file_name.ends_with(".tscn")
+	# 			and file_name != "inherit-me.tscn"
+	# 		):
+	# 			file_names.append(file_name)
+	# 		file_name = dir.get_next()
+	# else:
+	# 	print("An error occurred when trying to access the path.")
 
 	file_names.sort()
 
