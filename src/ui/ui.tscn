@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=23 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" path="res://src/reagents/catnip.tscn" id="13_i2k0t"]
 [ext_resource type="PackedScene" path="res://src/reagents/snake.tscn" id="14_1gdea"]
 [ext_resource type="Script" path="res://src/ui/tut_bounce.gd" id="14_7h0nf"]
+[ext_resource type="AudioStream" uid="uid://m0l00qiuscwe" path="res://src/reagents/assets/LateNightRadio.mp3" id="17_ee3gv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hajjo"]
 bg_color = Color(0.454902, 0.454902, 0.454902, 1)
@@ -368,5 +369,9 @@ grow_vertical = 0
 unique_name_in_owner = true
 position = Vector2(-151, -63.0001)
 scale = Vector2(4.71875, 4.71875)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_ee3gv")
+volume_db = -15.0
 
 [connection signal="pressed" from="HBoxContainer/Control/MarginContainer/VBoxContainer/CookButton" to="." method="_on_CookButton_pressed"]
