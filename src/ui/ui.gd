@@ -9,6 +9,7 @@ extends Control
 
 
 func _ready():
+	randomize()
 	for child in reagent_table.get_children():
 		child.selected.connect(summon_pool.add_reagent)
 	space.cooked.connect(on_cooked)
