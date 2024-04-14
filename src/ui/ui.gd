@@ -80,7 +80,6 @@ func on_reagent_remove():
 	cook_button.disabled = summon_pool.reagents.size() == 0
 
 
-
 func on_reagent_add(reagent):
 	cook_button.disabled = false
 	if tuts[0].visible:
@@ -110,9 +109,10 @@ func _on_CookButton_pressed():
 		var r = reagent[0]
 		var amount = reagent[1].amount()
 		spec.append([r, amount])
-	await space.follow_reagents(spec)
+	var hit = await space.follow_reagents(spec)
 
-	space.cook()
+	if not hit:
+		space.cook()
 
 	if tut_was_on:
 		new_goal()

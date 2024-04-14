@@ -3,6 +3,7 @@ extends Node2D
 signal cooked(creature, distance)
 
 const COOK_THRESHOLD = 100
+@export var hostile_dist = 25
 
 @export var speed = 2.0
 @export var path_scale = 2.0
@@ -10,6 +11,7 @@ const COOK_THRESHOLD = 100
 @onready var goals = $Goals.get_children()
 @onready var head = $Head
 @onready var path_draw = $PathDraw
+@onready var hostiles = $Hostiles.get_children()
 
 var sortedDictList
 
@@ -38,6 +40,7 @@ func reset_head():
 func follow_reagents(reagents_spec):
 	$Camera2D.start_follow()
 	path_draw.add_point(head.position)
+	var hit = false
 	for spec in reagents_spec:
 		var reagent = spec[0]
 		var amount = spec[1]
@@ -55,9 +58,21 @@ func follow_reagents(reagents_spec):
 			traversed += 1
 			head.position = start_pos + path.sample_baked(traversed) * path_scale
 			path_draw.add_point(head.position)
+
+			if hit_hostile():
+				hit = true
+				break
 			queue_redraw()
 			await get_tree().physics_frame
 	$Camera2D.end_follow()
+	return hit
+
+
+func hit_hostile():
+	for hostile in hostiles:
+		if head.position.distance_to(hostile.position) < hostile_dist:
+			return true
+	return false
 
 
 func cook():

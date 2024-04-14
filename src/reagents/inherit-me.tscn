@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvhlkfg6cqjtu"]
 
 [ext_resource type="Script" path="res://src/reagents/inherit-me.gd" id="1_78et4"]
-[ext_resource type="Texture2D" uid="uid://b8y8j8fw0bp0c" path="res://src/reagents/defautlt_tile.png" id="2_ah0qu"]
+[ext_resource type="Texture2D" uid="uid://b8y8j8fw0bp0c" path="res://src/reagents/assets/placeholder.png" id="2_ah0qu"]
 
 [sub_resource type="Curve2D" id="Curve2D_s48fh"]
 _data = {
