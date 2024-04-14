@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm8aarklmwxd0"]
+
+[ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_wgdsj"]
+
+[sub_resource type="Curve2D" id="Curve2D_qho3d"]
+_data = {
+"points": PackedVector2Array(-6.17513, -35.4574, 6.17513, 35.4574, 0, 0, -1.07007, -41.2477, 1.07007, 41.2477, 3, 65, 0, 0, 0, 0, 7, 124)
+}
+point_count = 3
+
+[node name="Reagent" instance=ExtResource("1_wgdsj")]
+reagent_name = "Cabbage"
+
+[node name="Path2D" parent="." index="0"]
+curve = SubResource("Curve2D_qho3d")
