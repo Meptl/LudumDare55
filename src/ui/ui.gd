@@ -6,7 +6,6 @@ extends Control
 @onready var creation_popup = %CreationPopup
 @onready var goalman = %GoalMan
 @onready var cook_button = %CookButton
-
 @onready var tuts = [%Tut1, %Tut2, %Tut3]
 
 

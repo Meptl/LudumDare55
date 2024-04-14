@@ -31,6 +31,7 @@ func reset_head():
 
 
 func follow_reagents(reagents_spec):
+	$Camera2D.start_follow()
 	path_draw.add_point(head.position)
 	for spec in reagents_spec:
 		var reagent = spec[0]
@@ -51,7 +52,7 @@ func follow_reagents(reagents_spec):
 			path_draw.add_point(head.position)
 			queue_redraw()
 			await get_tree().physics_frame
-
+	$Camera2D.end_follow()
 
 func cook():
 	var closest_node = goals[0]

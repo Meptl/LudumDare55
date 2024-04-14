@@ -15,9 +15,8 @@
 [ext_resource type="PackedScene" path="res://src/goals/eyebat.tscn" id="16_d6lda"]
 [ext_resource type="PackedScene" uid="uid://1dpiaakyf2m4" path="res://src/goals/ghost_cat.tscn" id="17_57hnd"]
 [ext_resource type="PackedScene" uid="uid://dalglnndf3of0" path="res://src/space/path_draw.tscn" id="17_oktvl"]
-[ext_resource type="PackedScene" uid="uid://b1mptotbh5hh8" path="res://src/goals/radioactive_act.tscn" id="18_b12pq"]
-[ext_resource type="PackedScene" uid="uid://dshoxd4we5ov8" path="res://src/goals/orange_cat.tscn" id="19_5vfcp"]
-
+[ext_resource type="PackedScene" path="res://src/goals/radioactive_act.tscn" id="18_b12pq"]
+[ext_resource type="PackedScene" path="res://src/goals/orange_cat.tscn" id="19_5vfcp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ky7l"]
 shader = ExtResource("10_1hbuv")
@@ -44,6 +43,7 @@ texture = ExtResource("2_wh33o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("5_mwdfa")
+target = NodePath("../Head")
 
 [node name="SummoningCircle" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
