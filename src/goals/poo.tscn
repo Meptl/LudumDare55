@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfw0xxe4vokfe"]
 
-[ext_resource type="PackedScene" path="res://src/goals/inherit-me.tscn" id="1_8jhdq"]
-[ext_resource type="Texture2D" uid="uid://5qi3wxtlc87g" path="res://src/reagents/poo.png" id="2_okuhi"]
+[ext_resource type="PackedScene" uid="uid://dlatlabd0t4bq" path="res://src/goals/inherit-me.tscn" id="1_8jhdq"]
+[ext_resource type="Texture2D" uid="uid://d4krgmc41ul07" path="res://src/goals/icons/poo.png" id="2_61i1l"]
 
 [node name="GoalNode" instance=ExtResource("1_8jhdq")]
 creature_name = "poo"
 description = "It stinks!"
 
 [node name="SummonIcon" parent="." index="1"]
-texture = ExtResource("2_okuhi")
+texture = ExtResource("2_61i1l")

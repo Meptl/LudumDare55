@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd8tvwc50csn6"]
+
+[ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_f7os1"]
+[ext_resource type="Texture2D" uid="uid://dl72l3j3k3l75" path="res://src/reagents/assets/burning_loop_1.png" id="2_x2t5a"]
+
+[sub_resource type="Curve2D" id="Curve2D_nxxrx"]
+_data = {
+"points": PackedVector2Array(-14.9971, 2.77954, 14.9971, -2.77954, 0, 0, 1.6757, 14.2541, -1.6757, -14.2541, 38, -14, 0.573927, 9.20278, -0.573927, -9.20278, -25, -42, 0.707906, 10.1466, -0.707906, -10.1466, 24, -60, 0.471937, 7.55099, -0.471937, -7.55099, -6, -72, 0, 0, 0, 0, 8, -92, 0, 0, 0, 0, 11, -106)
+}
+point_count = 7
+
+[node name="Reagent" instance=ExtResource("1_f7os1")]
+reagent_name = "Fire"
+
+[node name="Path2D" parent="." index="0"]
+curve = SubResource("Curve2D_nxxrx")
+
+[node name="Icon" parent="." index="1"]
+position = Vector2(0, -1)
+texture = ExtResource("2_x2t5a")
