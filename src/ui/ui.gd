@@ -7,6 +7,7 @@ extends Control
 @onready var goalman = %GoalMan
 @onready var cook_button = %CookButton
 @onready var tuts = [%Tut1, %Tut2, %Tut3]
+@onready var music = $Music
 
 var goalman_popped = false
 
@@ -45,6 +46,8 @@ func on_charge_start():
 func on_reagent_remove():
 	cook_button.disabled = summon_pool.reagents.size() == 0
 
+func start_the_music():
+	$Music._instantiate_playback()
 
 func on_reagent_add(reagent):
 	cook_button.disabled = false
