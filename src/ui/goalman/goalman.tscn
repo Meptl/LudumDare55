@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://blgkg48ox8l5w"]
+[gd_scene load_steps=6 format=3 uid="uid://blgkg48ox8l5w"]
 
 [ext_resource type="Texture2D" uid="uid://c4bo6ogddjm3q" path="res://src/ui/goalman/portrait female.png" id="1_tvuym"]
 [ext_resource type="Script" path="res://src/ui/goalman/goalman.gd" id="2_bcedv"]
 [ext_resource type="Texture2D" uid="uid://cdhm520jjgjww" path="res://src/ui/goalman/dialogue_window.png" id="3_4vg8d"]
 [ext_resource type="Texture2D" uid="uid://c8trqhvl36hi7" path="res://src/goals/icons/orange_3.png" id="4_8aggg"]
+[ext_resource type="Script" path="res://src/ui/tut_bounce.gd" id="4_tn4mp"]
 
 [node name="GoalMan" type="Sprite2D"]
 texture_filter = 1
@@ -16,6 +17,7 @@ script = ExtResource("2_bcedv")
 position = Vector2(-21.2706, 11.4824)
 texture = ExtResource("3_4vg8d")
 offset = Vector2(-16.155, -12.95)
+script = ExtResource("4_tn4mp")
 
 [node name="Goal" type="Sprite2D" parent="DialogueWindow"]
 position = Vector2(-17.6941, -15.6236)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=22 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bopee0dinlu8j" path="res://src/reagents/cabbage.tscn" id="12_xpio1"]
 [ext_resource type="PackedScene" path="res://src/reagents/catnip.tscn" id="13_i2k0t"]
 [ext_resource type="PackedScene" path="res://src/reagents/snake.tscn" id="14_1gdea"]
+[ext_resource type="Script" path="res://src/ui/tut_bounce.gd" id="14_7h0nf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hajjo"]
 bg_color = Color(0.454902, 0.454902, 0.454902, 1)
@@ -132,6 +133,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Node2D" type="Node2D" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2"]
+script = ExtResource("14_7h0nf")
+dir = Vector2(0, 1)
+size = 3.0
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut2/Node2D"]
 offset_left = -139.0
@@ -198,6 +202,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Node2D" type="Node2D" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut3"]
+script = ExtResource("14_7h0nf")
+dir = Vector2(-1, 0)
 
 [node name="Label" type="Label" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/Tut3/Node2D"]
 offset_left = 70.0
@@ -319,6 +325,9 @@ layout_mode = 2
 [node name="Tut1" type="Node2D" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 position = Vector2(-802, -20)
+script = ExtResource("14_7h0nf")
+dir = Vector2(-1, 0)
+size = 5.0
 
 [node name="Label" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/Tut1"]
 offset_left = 640.0
