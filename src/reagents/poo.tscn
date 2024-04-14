@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1glt7ryc0osd"]
 
 [ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_vt8um"]
-[ext_resource type="Texture2D" uid="uid://ciqveqiu04bgu" path="res://src/reagents/runeGrey_tile_002.png" id="2_4i6tx"]
+[ext_resource type="Texture2D" uid="uid://5qi3wxtlc87g" path="res://src/reagents/poo.png" id="2_oj1hr"]
 
 [sub_resource type="Curve2D" id="Curve2D_4b3ly"]
 _data = {
@@ -17,4 +17,4 @@ cost = 3
 curve = SubResource("Curve2D_4b3ly")
 
 [node name="Icon" parent="." index="1"]
-texture = ExtResource("2_4i6tx")
+texture = ExtResource("2_oj1hr")

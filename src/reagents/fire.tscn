@@ -1,6 +1,9 @@
+
 [gd_scene load_steps=3 format=3 uid="uid://bd8tvwc50csn6"]
 
+
 [ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_f7os1"]
+[ext_resource type="Texture2D" uid="uid://bqqh6jexmdb7s" path="res://src/reagents/Fire.png" id="2_vcj6b"]
 
 [sub_resource type="Curve2D" id="Curve2D_nxxrx"]
 _data = {
@@ -15,5 +18,5 @@ reagent_name = "Fire"
 curve = SubResource("Curve2D_nxxrx")
 
 [node name="Icon" parent="." index="1"]
-visible = false
 position = Vector2(0, -1)
+texture = ExtResource("2_vcj6b")

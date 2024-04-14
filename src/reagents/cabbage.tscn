@@ -1,6 +1,9 @@
+
 [gd_scene load_steps=3 format=3 uid="uid://bopee0dinlu8j"]
 
+
 [ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="1_wgdsj"]
+[ext_resource type="Texture2D" uid="uid://pffrw6f6820a" path="res://src/reagents/cabbage.png" id="2_faqdc"]
 
 [sub_resource type="Curve2D" id="Curve2D_qho3d"]
 _data = {
@@ -13,3 +16,6 @@ reagent_name = "Cabbage"
 
 [node name="Path2D" parent="." index="0"]
 curve = SubResource("Curve2D_qho3d")
+
+[node name="Icon" parent="." index="1"]
+texture = ExtResource("2_faqdc")
