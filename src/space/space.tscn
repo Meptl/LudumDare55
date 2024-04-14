@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dhqwixi573bmv"]
+[gd_scene load_steps=17 format=3 uid="uid://dhqwixi573bmv"]
 
 [ext_resource type="Script" path="res://src/space/space.gd" id="1_8pl8e"]
 [ext_resource type="PackedScene" uid="uid://2l6i4u1pi6g6" path="res://src/goals/poo.tscn" id="2_164b8"]
 [ext_resource type="Texture2D" uid="uid://bb7fpbvo7v7vx" path="res://icon.svg" id="2_wh33o"]
 [ext_resource type="Texture2D" uid="uid://cto8jynpsh58s" path="res://src/space/webb-dark.png" id="4_pdcjv"]
+[ext_resource type="Script" path="res://src/space/camera.gd" id="5_mwdfa"]
 [ext_resource type="Texture2D" uid="uid://pg5da6eylav2" path="res://src/space/summoning_circle.svg" id="7_28xyg"]
 [ext_resource type="Shader" path="res://src/shaders/boxblur.gdshader" id="10_1hbuv"]
 [ext_resource type="Script" path="res://src/space/spin.gd" id="10_n7cbw"]
@@ -40,6 +41,7 @@ scale = Vector2(0.385, 0.385)
 texture = ExtResource("2_wh33o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("5_mwdfa")
 
 [node name="SummoningCircle" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

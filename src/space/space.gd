@@ -7,12 +7,9 @@ signal cooked(creature)
 @export var speed = 2.0
 @export var debug: Array[PackedScene]
 @onready var goals = $Goals.get_children()
-@onready var cam = $Camera2D
 @onready var head = $Head
 
 var sortedDictList
-var dragging = false
-var drag_start = Vector2.ZERO
 
 var hist = []
 var failed_creature
@@ -23,22 +20,6 @@ func _ready():
 	failed_creature.visible = false
 	add_child(failed_creature)
 	# follow_reagents(debug)
-
-
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_MIDDLE:
-			if event.pressed:
-				dragging = true
-				drag_start = event.position
-			else:
-				dragging = false
-	elif event is InputEventMouseMotion:
-		if dragging:
-			var drag_end = event.position
-			var drag_distance = drag_start - drag_end
-			cam.position += drag_distance
-			drag_start = drag_end
 
 
 func reset_head():
