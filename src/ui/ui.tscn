@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=18 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dau0vtlkbgurg" path="res://src/ui/creation_popup.tscn" id="7_f7j84"]
 [ext_resource type="PackedScene" uid="uid://blgkg48ox8l5w" path="res://src/ui/goalman/goalman.tscn" id="8_2u46p"]
 [ext_resource type="Texture2D" uid="uid://cdpil1a8uli2" path="res://src/ui/tutorial/arrow.png" id="8_7n5rd"]
+[ext_resource type="PackedScene" uid="uid://csq5hy273kfx5" path="res://src/reagents/witch.tscn" id="10_ib1nq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hajjo"]
 bg_color = Color(0.454902, 0.454902, 0.454902, 1)
@@ -283,6 +284,10 @@ layout_mode = 2
 [node name="ReagentListing2" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ReagentTable" instance=ExtResource("1_bowou")]
 layout_mode = 2
 reagent = ExtResource("2_2lk2o")
+
+[node name="ReagentListing3" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer/ReagentTable" instance=ExtResource("1_bowou")]
+layout_mode = 2
+reagent = ExtResource("10_ib1nq")
 
 [node name="Tut1" type="Node2D" parent="HBoxContainer/PanelContainer/MarginContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true

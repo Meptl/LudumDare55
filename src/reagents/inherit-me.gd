@@ -1,6 +1,6 @@
 extends Node
 
-@export var reagent_name = "Placeholder Ingredient"
+@export var reagent_name = "Reagent"
 @export var cost = 5
 
 @onready var path = $Path2D.curve

@@ -42,10 +42,12 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.395604), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="ReagentListing" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 64)
 offset_right = 269.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 script = ExtResource("1_dh6sa")
 normal_style = SubResource("StyleBoxFlat_f0ynw")
 pressed_style = SubResource("StyleBoxFlat_bnrmw")
@@ -57,6 +59,7 @@ layout_mode = 2
 theme_override_constants/separation = 7
 
 [node name="TextureRect" type="TextureRect" parent="ReagentListing"]
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 texture = ExtResource("2_4l33i")
 stretch_mode = 3
@@ -73,6 +76,7 @@ text = "4"
 [node name="Control2" type="Control" parent="ReagentListing"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="ReagentListing"]
 custom_minimum_size = Vector2(100, 0)
