@@ -132,3 +132,7 @@ func _on_CookButton_pressed():
 		new_goal()
 
 	cook_button.disabled = false
+
+
+func _on_trashcan_pressed():
+	summon_pool.clear()

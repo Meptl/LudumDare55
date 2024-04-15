@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cc7rcobagf62v"]
+[gd_scene load_steps=33 format=3 uid="uid://cc7rcobagf62v"]
 
 [ext_resource type="PackedScene" uid="uid://cm3i6u75idafx" path="res://src/ui/reagent_listing.tscn" id="1_bowou"]
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_jy0v1"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dau0vtlkbgurg" path="res://src/ui/creation_popup.tscn" id="7_f7j84"]
 [ext_resource type="PackedScene" uid="uid://blgkg48ox8l5w" path="res://src/ui/goalman/goalman.tscn" id="8_2u46p"]
 [ext_resource type="Texture2D" uid="uid://cdpil1a8uli2" path="res://src/ui/tutorial/arrow.png" id="8_7n5rd"]
+[ext_resource type="Texture2D" uid="uid://lll27djjhvm3" path="res://src/ui/trashcan.png" id="8_ctle6"]
 [ext_resource type="PackedScene" uid="uid://csq5hy273kfx5" path="res://src/reagents/witch.tscn" id="10_ib1nq"]
 [ext_resource type="PackedScene" uid="uid://dvhlkfg6cqjtu" path="res://src/reagents/inherit-me.tscn" id="10_yt445"]
 [ext_resource type="Script" path="res://src/ui/tut_bounce.gd" id="14_7h0nf"]
@@ -268,7 +269,12 @@ texture = ExtResource("8_7n5rd")
 custom_minimum_size = Vector2(0, 9)
 layout_mode = 2
 
-[node name="CookButton" type="Button" parent="HBoxContainer/Control/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="CookButton" type="Button" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -281,6 +287,11 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_alhft")
 theme_override_styles/focus = SubResource("StyleBoxFlat_g5325")
 disabled = true
 text = "Cook"
+
+[node name="Trashcan" type="TextureButton" parent="HBoxContainer/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("8_ctle6")
 
 [node name="Tut3" type="Control" parent="HBoxContainer/Control/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -460,4 +471,5 @@ stream = ExtResource("17_ee3gv")
 volume_db = -15.0
 autoplay = true
 
-[connection signal="pressed" from="HBoxContainer/Control/MarginContainer/VBoxContainer/CookButton" to="." method="_on_CookButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/Control/MarginContainer/VBoxContainer/HBoxContainer/CookButton" to="." method="_on_CookButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/Control/MarginContainer/VBoxContainer/HBoxContainer/Trashcan" to="." method="_on_trashcan_pressed"]

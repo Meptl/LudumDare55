@@ -60,7 +60,7 @@ texture = ExtResource("7_28xyg")
 position = Vector2(250, 102)
 
 [node name="GoalNode3" parent="Goals" instance=ExtResource("14_dmtbh")]
-position = Vector2(242, 234)
+position = Vector2(322, 236)
 
 [node name="GoalNode2" parent="Goals" instance=ExtResource("15_vn0ma")]
 position = Vector2(116, 231)
@@ -100,7 +100,7 @@ position = Vector2(0, -360)
 texture = ExtResource("15_puixp")
 
 [node name="Hostile6" type="Sprite2D" parent="Hostiles"]
-position = Vector2(382, -89)
+position = Vector2(446, -75)
 texture = ExtResource("15_puixp")
 
 [node name="CamTutorial" parent="." instance=ExtResource("16_6sre0")]

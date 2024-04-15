@@ -39,3 +39,10 @@ func remove_reagent(src):
 		i += 1
 	reagents.remove_at(i)
 	src.queue_free()
+
+
+func clear():
+	for child in get_children():
+		child.queue_free()
+	reagents.clear()
+	remove_requested.emit()
